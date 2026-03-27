@@ -39,11 +39,19 @@
             background: #fafafa;
             overflow-x: hidden;
             color: #2a2a2a;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Wrapper para conter as flores */
+        .page-wrapper {
+            position: relative;
+            min-height: 300vh;
         }
 
         /* Flores PNG - MOLDURA COMPLETA AO REDOR DO PERÍMETRO */
         .flower-decoration {
-            position: fixed;
+            position: absolute;
             pointer-events: none;
             z-index: 5;
             opacity: 0;
@@ -58,258 +66,298 @@
 
         /* === CANTO SUPERIOR ESQUERDO === */
         .flower-corner-tl {
-            top: -50%;
-            left: -50%;
+            top: 0;
+            left: 0;
             width: 180px;
             height: 180px;
+            transform: translate(-50%, -50%);
             animation: flowerFadeIn 2s ease-out 0.1s forwards, flowerSway1 7s ease-in-out infinite 2s;
         }
 
         /* === BORDA SUPERIOR === */
         .flower-top-1 {
-            top: -50%;
-            left: 10%;
+            top: 0;
+            left: 15%;
             width: 160px;
             height: 160px;
+            transform: translate(-50%, -50%) rotate(15deg);
             animation: flowerFadeIn 2s ease-out 0.2s forwards, flowerSway2 8s ease-in-out infinite 2.2s;
-            transform: rotate(15deg);
         }
 
         .flower-top-2 {
-            top: -50%;
-            left: 25%;
+            top: 0;
+            left: 30%;
             width: 170px;
             height: 170px;
+            transform: translate(-50%, -50%) rotate(-10deg);
             animation: flowerFadeIn 2s ease-out 0.3s forwards, flowerSway1 7.5s ease-in-out infinite 2.4s;
-            transform: rotate(-10deg);
         }
 
         .flower-top-3 {
-            top: -50%;
-            left: 40%;
+            top: 0;
+            left: 45%;
             width: 165px;
             height: 165px;
+            transform: translate(-50%, -50%) rotate(20deg);
             animation: flowerFadeIn 2s ease-out 0.4s forwards, flowerSway2 8.5s ease-in-out infinite 2.6s;
-            transform: rotate(20deg);
         }
 
         .flower-top-4 {
-            top: -50%;
-            left: 55%;
+            top: 0;
+            left: 60%;
             width: 175px;
             height: 175px;
+            transform: translate(-50%, -50%) rotate(-15deg);
             animation: flowerFadeIn 2s ease-out 0.5s forwards, flowerSway1 7s ease-in-out infinite 2.8s;
-            transform: rotate(-15deg);
         }
 
         .flower-top-5 {
-            top: -50%;
-            left: 70%;
+            top: 0;
+            left: 75%;
             width: 160px;
             height: 160px;
+            transform: translate(-50%, -50%) rotate(12deg);
             animation: flowerFadeIn 2s ease-out 0.6s forwards, flowerSway2 9s ease-in-out infinite 3s;
-            transform: rotate(12deg);
         }
 
         .flower-top-6 {
-            top: -50%;
-            left: 85%;
+            top: 0;
+            left: 90%;
             width: 170px;
             height: 170px;
+            transform: translate(-50%, -50%) rotate(-18deg);
             animation: flowerFadeIn 2s ease-out 0.7s forwards, flowerSway1 8s ease-in-out infinite 3.2s;
-            transform: rotate(-18deg);
         }
 
         /* === CANTO SUPERIOR DIREITO === */
         .flower-corner-tr {
-            top: -50%;
-            right: -50%;
+            top: 0;
+            right: 0;
             width: 180px;
             height: 180px;
+            transform: translate(50%, -50%);
             animation: flowerFadeIn 2s ease-out 0.8s forwards, flowerSway2 7.5s ease-in-out infinite 3.4s;
         }
 
-        /* === BORDA DIREITA === */
+        /* === BORDA DIREITA - MAIS DENSA === */
         .flower-right-1 {
-            top: 10%;
-            right: -50%;
+            top: 8%;
+            right: 0;
             width: 165px;
             height: 165px;
+            transform: translate(50%, -50%) rotate(25deg);
             animation: flowerFadeIn 2s ease-out 0.9s forwards, flowerSway1 8.5s ease-in-out infinite 3.6s;
-            transform: rotate(25deg);
         }
 
         .flower-right-2 {
-            top: 25%;
-            right: -50%;
+            top: 20%;
+            right: 0;
             width: 170px;
             height: 170px;
+            transform: translate(50%, -50%) rotate(-12deg);
             animation: flowerFadeIn 2s ease-out 1s forwards, flowerSway2 7s ease-in-out infinite 3.8s;
-            transform: rotate(-12deg);
         }
 
         .flower-right-3 {
-            top: 40%;
-            right: -50%;
+            top: 32%;
+            right: 0;
             width: 160px;
             height: 160px;
+            transform: translate(50%, -50%) rotate(18deg);
             animation: flowerFadeIn 2s ease-out 1.1s forwards, flowerSway1 9s ease-in-out infinite 4s;
-            transform: rotate(18deg);
         }
 
         .flower-right-4 {
-            top: 55%;
-            right: -50%;
+            top: 44%;
+            right: 0;
             width: 175px;
             height: 175px;
+            transform: translate(50%, -50%) rotate(-20deg);
             animation: flowerFadeIn 2s ease-out 1.2s forwards, flowerSway2 8s ease-in-out infinite 4.2s;
-            transform: rotate(-20deg);
         }
 
         .flower-right-5 {
-            top: 70%;
-            right: -50%;
+            top: 56%;
+            right: 0;
             width: 165px;
             height: 165px;
+            transform: translate(50%, -50%) rotate(15deg);
             animation: flowerFadeIn 2s ease-out 1.3s forwards, flowerSway1 7.5s ease-in-out infinite 4.4s;
-            transform: rotate(15deg);
         }
 
         .flower-right-6 {
-            top: 85%;
-            right: -50%;
+            top: 68%;
+            right: 0;
             width: 170px;
             height: 170px;
+            transform: translate(50%, -50%) rotate(-22deg);
             animation: flowerFadeIn 2s ease-out 1.4s forwards, flowerSway2 8.5s ease-in-out infinite 4.6s;
-            transform: rotate(-22deg);
+        }
+
+        .flower-right-7 {
+            top: 80%;
+            right: 0;
+            width: 160px;
+            height: 160px;
+            transform: translate(50%, -50%) rotate(14deg);
+            animation: flowerFadeIn 2s ease-out 1.45s forwards, flowerSway1 9s ease-in-out infinite 4.7s;
+        }
+
+        .flower-right-8 {
+            top: 92%;
+            right: 0;
+            width: 175px;
+            height: 175px;
+            transform: translate(50%, -50%) rotate(-18deg);
+            animation: flowerFadeIn 2s ease-out 1.48s forwards, flowerSway2 7.5s ease-in-out infinite 4.8s;
         }
 
         /* === CANTO INFERIOR DIREITO === */
         .flower-corner-br {
-            bottom: -50%;
-            right: -50%;
+            bottom: 0;
+            right: 0;
             width: 180px;
             height: 180px;
+            transform: translate(50%, 50%);
             animation: flowerFadeIn 2s ease-out 1.5s forwards, flowerSway1 7s ease-in-out infinite 4.8s;
         }
 
         /* === BORDA INFERIOR === */
         .flower-bottom-1 {
-            bottom: -50%;
+            bottom: 0;
             right: 10%;
             width: 170px;
             height: 170px;
+            transform: translate(50%, 50%) rotate(-16deg);
             animation: flowerFadeIn 2s ease-out 1.6s forwards, flowerSway2 9s ease-in-out infinite 5s;
-            transform: rotate(-16deg);
         }
 
         .flower-bottom-2 {
-            bottom: -50%;
+            bottom: 0;
             right: 25%;
             width: 165px;
             height: 165px;
+            transform: translate(50%, 50%) rotate(14deg);
             animation: flowerFadeIn 2s ease-out 1.7s forwards, flowerSway1 8s ease-in-out infinite 5.2s;
-            transform: rotate(14deg);
         }
 
         .flower-bottom-3 {
-            bottom: -50%;
+            bottom: 0;
             right: 40%;
             width: 175px;
             height: 175px;
+            transform: translate(50%, 50%) rotate(-18deg);
             animation: flowerFadeIn 2s ease-out 1.8s forwards, flowerSway2 7.5s ease-in-out infinite 5.4s;
-            transform: rotate(-18deg);
         }
 
         .flower-bottom-4 {
-            bottom: -50%;
+            bottom: 0;
             right: 55%;
             width: 160px;
             height: 160px;
+            transform: translate(50%, 50%) rotate(22deg);
             animation: flowerFadeIn 2s ease-out 1.9s forwards, flowerSway1 8.5s ease-in-out infinite 5.6s;
-            transform: rotate(22deg);
         }
 
         .flower-bottom-5 {
-            bottom: -50%;
+            bottom: 0;
             right: 70%;
             width: 170px;
             height: 170px;
+            transform: translate(50%, 50%) rotate(-14deg);
             animation: flowerFadeIn 2s ease-out 2s forwards, flowerSway2 7s ease-in-out infinite 5.8s;
-            transform: rotate(-14deg);
         }
 
         .flower-bottom-6 {
-            bottom: -50%;
+            bottom: 0;
             right: 85%;
             width: 165px;
             height: 165px;
+            transform: translate(50%, 50%) rotate(16deg);
             animation: flowerFadeIn 2s ease-out 2.1s forwards, flowerSway1 9s ease-in-out infinite 6s;
-            transform: rotate(16deg);
         }
 
         /* === CANTO INFERIOR ESQUERDO === */
         .flower-corner-bl {
-            bottom: -50%;
-            left: -50%;
+            bottom: 0;
+            left: 0;
             width: 180px;
             height: 180px;
+            transform: translate(-50%, 50%);
             animation: flowerFadeIn 2s ease-out 2.2s forwards, flowerSway2 8s ease-in-out infinite 6.2s;
         }
 
-        /* === BORDA ESQUERDA === */
+        /* === BORDA ESQUERDA - MAIS DENSA === */
         .flower-left-1 {
-            bottom: 10%;
-            left: -50%;
+            top: 8%;
+            left: 0;
             width: 165px;
             height: 165px;
+            transform: translate(-50%, -50%) rotate(-20deg);
             animation: flowerFadeIn 2s ease-out 2.3s forwards, flowerSway1 7.5s ease-in-out infinite 6.4s;
-            transform: rotate(-20deg);
         }
 
         .flower-left-2 {
-            bottom: 25%;
-            left: -50%;
+            top: 20%;
+            left: 0;
             width: 170px;
             height: 170px;
+            transform: translate(-50%, -50%) rotate(18deg);
             animation: flowerFadeIn 2s ease-out 2.4s forwards, flowerSway2 8.5s ease-in-out infinite 6.6s;
-            transform: rotate(18deg);
         }
 
         .flower-left-3 {
-            bottom: 40%;
-            left: -50%;
+            top: 32%;
+            left: 0;
             width: 175px;
             height: 175px;
+            transform: translate(-50%, -50%) rotate(-15deg);
             animation: flowerFadeIn 2s ease-out 2.5s forwards, flowerSway1 7s ease-in-out infinite 6.8s;
-            transform: rotate(-15deg);
         }
 
         .flower-left-4 {
-            bottom: 55%;
-            left: -50%;
+            top: 44%;
+            left: 0;
             width: 160px;
             height: 160px;
+            transform: translate(-50%, -50%) rotate(20deg);
             animation: flowerFadeIn 2s ease-out 2.6s forwards, flowerSway2 9s ease-in-out infinite 7s;
-            transform: rotate(20deg);
         }
 
         .flower-left-5 {
-            bottom: 70%;
-            left: -50%;
+            top: 56%;
+            left: 0;
             width: 170px;
             height: 170px;
+            transform: translate(-50%, -50%) rotate(-12deg);
             animation: flowerFadeIn 2s ease-out 2.7s forwards, flowerSway1 8s ease-in-out infinite 7.2s;
-            transform: rotate(-12deg);
         }
 
         .flower-left-6 {
-            bottom: 85%;
-            left: -50%;
+            top: 68%;
+            left: 0;
             width: 165px;
             height: 165px;
+            transform: translate(-50%, -50%) rotate(24deg);
             animation: flowerFadeIn 2s ease-out 2.8s forwards, flowerSway2 7.5s ease-in-out infinite 7.4s;
-            transform: rotate(24deg);
+        }
+
+        .flower-left-7 {
+            top: 80%;
+            left: 0;
+            width: 175px;
+            height: 175px;
+            transform: translate(-50%, -50%) rotate(-16deg);
+            animation: flowerFadeIn 2s ease-out 2.85s forwards, flowerSway1 8.5s ease-in-out infinite 7.5s;
+        }
+
+        .flower-left-8 {
+            top: 92%;
+            left: 0;
+            width: 160px;
+            height: 160px;
+            transform: translate(-50%, -50%) rotate(22deg);
+            animation: flowerFadeIn 2s ease-out 2.88s forwards, flowerSway2 9s ease-in-out infinite 7.6s;
         }
 
         /* Animações */
@@ -527,6 +575,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
         }
 
         .logo-container img {
@@ -941,6 +995,7 @@
     </style>
 </head>
 <body>
+    <div class="page-wrapper">
     <!-- 
     ═══════════════════════════════════════════════════════════════
     FLORES PNG - MOLDURA COMPLETA AO REDOR DO PERÍMETRO
@@ -1011,6 +1066,12 @@
     <div class="flower-decoration flower-right-6">
         <img src="flor2.png" alt="">
     </div>
+    <div class="flower-decoration flower-right-7">
+        <img src="flor3.png" alt="">
+    </div>
+    <div class="flower-decoration flower-right-8">
+        <img src="flor4.png" alt="">
+    </div>
 
     <!-- CANTO INFERIOR DIREITO -->
     <div class="flower-decoration flower-corner-br">
@@ -1061,6 +1122,12 @@
     <div class="flower-decoration flower-left-6">
         <img src="flor4.png" alt="">
     </div>
+    <div class="flower-decoration flower-left-7">
+        <img src="flor1.png" alt="">
+    </div>
+    <div class="flower-decoration flower-left-8">
+        <img src="flor2.png" alt="">
+    </div>
 
     <!-- Elementos abstratos decorativos -->
     <div class="abstract-line line-1"></div>
@@ -1084,7 +1151,7 @@
         <div class="container">
             <!-- Logo SVG -->
             <div class="logo-container">
-                <img src="logo.svg" alt="Logo Antonella">
+                <img src="logo.png" alt="Logo Antonella">
             </div>
 
             <div class="save-text">Save the Date</div>
@@ -1270,5 +1337,6 @@
             }
         });
     </script>
+    </div>
 </body>
 </html>
