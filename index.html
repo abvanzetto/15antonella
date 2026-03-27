@@ -1,1342 +1,988 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antonella Ditadi - 15 Anos | Save the Date</title>
-    
-    <!-- Meta Tags para Compartilhamento WhatsApp/Social -->
-    <meta name="description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date! 12 de Setembro, 2026.">
-    
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://antonelladitadi.online/">
-    <meta property="og:title" content="Antonella Ditadi - 15 Anos">
-    <meta property="og:description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date! 12 de Setembro, 2026.">
-    <meta property="og:image" content="https://antonelladitadi.online/share-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://antonelladitadi.online/">
-    <meta property="twitter:title" content="Antonella Ditadi - 15 Anos">
-    <meta property="twitter:description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date!">
-    <meta property="twitter:image" content="https://antonelladitadi.online/share-image.jpg">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #fafafa;
-            overflow-x: hidden;
-            color: #2a2a2a;
-            position: relative;
-            min-height: 100vh;
-        }
+```
+<!-- Meta Tags para Compartilhamento WhatsApp/Social -->
+<meta name="description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date! 12 de Setembro, 2026.">
 
-        /* Wrapper para conter as flores */
-        .page-wrapper {
-            position: relative;
-            min-height: 300vh;
-        }
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antonelladitadi.online/">
+<meta property="og:title" content="Antonella Ditadi - 15 Anos">
+<meta property="og:description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date! 12 de Setembro, 2026.">
+<meta property="og:image" content="https://antonelladitadi.online/share-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-        /* Flores PNG - MOLDURA COMPLETA AO REDOR DO PERÍMETRO */
-        .flower-decoration {
-            position: absolute;
-            pointer-events: none;
-            z-index: 5;
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://antonelladitadi.online/">
+<meta property="twitter:title" content="Antonella Ditadi - 15 Anos">
+<meta property="twitter:description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date!">
+<meta property="twitter:image" content="https://antonelladitadi.online/share-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background: #fafafa;
+        overflow-x: hidden;
+        color: #2a2a2a;
+        position: relative;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Flores PNG - 4 FLORES GRANDES NOS CANTOS */
+    .flower-decoration {
+        position: fixed;
+        pointer-events: none;
+        z-index: 5;
+        opacity: 0;
+    }
+
+    .flower-decoration img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 15px rgba(0,0,0,0.15));
+    }
+
+    /* === CANTO SUPERIOR ESQUERDO === */
+    .flower-corner-tl {
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        transform: translate(-50%, -50%);
+        animation: flowerFadeIn 2s ease-out 0.2s forwards, flowerSway1 9s ease-in-out infinite 2s;
+    }
+
+    /* === CANTO SUPERIOR DIREITO === */
+    .flower-corner-tr {
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: 400px;
+        transform: translate(50%, -50%);
+        animation: flowerFadeIn 2s ease-out 0.4s forwards, flowerSway2 10s ease-in-out infinite 2.5s;
+    }
+
+    /* === CANTO INFERIOR DIREITO === */
+    .flower-corner-br {
+        bottom: 0;
+        right: 0;
+        width: 400px;
+        height: 400px;
+        transform: translate(50%, 50%);
+        animation: flowerFadeIn 2s ease-out 0.6s forwards, flowerSway1 8.5s ease-in-out infinite 3s;
+    }
+
+    /* === CANTO INFERIOR ESQUERDO === */
+    .flower-corner-bl {
+        bottom: 0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        transform: translate(-50%, 50%);
+        animation: flowerFadeIn 2s ease-out 0.8s forwards, flowerSway2 9.5s ease-in-out infinite 3.5s;
+    }
+
+    /* Animações */
+    @keyframes flowerFadeIn {
+        0% {
             opacity: 0;
+            transform: scale(0.85);
         }
-
-        .flower-decoration img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.12));
+        100% {
+            opacity: 0.8;
+            transform: scale(1);
         }
+    }
 
-        /* === CANTO SUPERIOR ESQUERDO === */
-        .flower-corner-tl {
-            top: 0;
-            left: 0;
-            width: 180px;
-            height: 180px;
-            transform: translate(-50%, -50%);
-            animation: flowerFadeIn 2s ease-out 0.1s forwards, flowerSway1 7s ease-in-out infinite 2s;
+    @keyframes flowerSway1 {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg) scale(1);
         }
-
-        /* === BORDA SUPERIOR === */
-        .flower-top-1 {
-            top: 0;
-            left: 15%;
-            width: 160px;
-            height: 160px;
-            transform: translate(-50%, -50%) rotate(15deg);
-            animation: flowerFadeIn 2s ease-out 0.2s forwards, flowerSway2 8s ease-in-out infinite 2.2s;
+        25% {
+            transform: translateY(-20px) rotate(3deg) scale(1.03);
         }
-
-        .flower-top-2 {
-            top: 0;
-            left: 30%;
-            width: 170px;
-            height: 170px;
-            transform: translate(-50%, -50%) rotate(-10deg);
-            animation: flowerFadeIn 2s ease-out 0.3s forwards, flowerSway1 7.5s ease-in-out infinite 2.4s;
+        50% {
+            transform: translateY(-10px) rotate(-2deg) scale(1.01);
         }
-
-        .flower-top-3 {
-            top: 0;
-            left: 45%;
-            width: 165px;
-            height: 165px;
-            transform: translate(-50%, -50%) rotate(20deg);
-            animation: flowerFadeIn 2s ease-out 0.4s forwards, flowerSway2 8.5s ease-in-out infinite 2.6s;
+        75% {
+            transform: translateY(-15px) rotate(2deg) scale(1.02);
         }
+    }
 
-        .flower-top-4 {
-            top: 0;
-            left: 60%;
-            width: 175px;
-            height: 175px;
-            transform: translate(-50%, -50%) rotate(-15deg);
-            animation: flowerFadeIn 2s ease-out 0.5s forwards, flowerSway1 7s ease-in-out infinite 2.8s;
+    @keyframes flowerSway2 {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg) scale(1);
         }
-
-        .flower-top-5 {
-            top: 0;
-            left: 75%;
-            width: 160px;
-            height: 160px;
-            transform: translate(-50%, -50%) rotate(12deg);
-            animation: flowerFadeIn 2s ease-out 0.6s forwards, flowerSway2 9s ease-in-out infinite 3s;
+        33% {
+            transform: translateY(-18px) rotate(-3deg) scale(1.02);
         }
-
-        .flower-top-6 {
-            top: 0;
-            left: 90%;
-            width: 170px;
-            height: 170px;
-            transform: translate(-50%, -50%) rotate(-18deg);
-            animation: flowerFadeIn 2s ease-out 0.7s forwards, flowerSway1 8s ease-in-out infinite 3.2s;
+        66% {
+            transform: translateY(-12px) rotate(4deg) scale(1.03);
         }
+    }
 
-        /* === CANTO SUPERIOR DIREITO === */
-        .flower-corner-tr {
-            top: 0;
-            right: 0;
-            width: 180px;
-            height: 180px;
-            transform: translate(50%, -50%);
-            animation: flowerFadeIn 2s ease-out 0.8s forwards, flowerSway2 7.5s ease-in-out infinite 3.4s;
-        }
-
-        /* === BORDA DIREITA - MAIS DENSA === */
-        .flower-right-1 {
-            top: 8%;
-            right: 0;
-            width: 165px;
-            height: 165px;
-            transform: translate(50%, -50%) rotate(25deg);
-            animation: flowerFadeIn 2s ease-out 0.9s forwards, flowerSway1 8.5s ease-in-out infinite 3.6s;
-        }
-
-        .flower-right-2 {
-            top: 20%;
-            right: 0;
-            width: 170px;
-            height: 170px;
-            transform: translate(50%, -50%) rotate(-12deg);
-            animation: flowerFadeIn 2s ease-out 1s forwards, flowerSway2 7s ease-in-out infinite 3.8s;
-        }
-
-        .flower-right-3 {
-            top: 32%;
-            right: 0;
-            width: 160px;
-            height: 160px;
-            transform: translate(50%, -50%) rotate(18deg);
-            animation: flowerFadeIn 2s ease-out 1.1s forwards, flowerSway1 9s ease-in-out infinite 4s;
-        }
-
-        .flower-right-4 {
-            top: 44%;
-            right: 0;
-            width: 175px;
-            height: 175px;
-            transform: translate(50%, -50%) rotate(-20deg);
-            animation: flowerFadeIn 2s ease-out 1.2s forwards, flowerSway2 8s ease-in-out infinite 4.2s;
-        }
-
-        .flower-right-5 {
-            top: 56%;
-            right: 0;
-            width: 165px;
-            height: 165px;
-            transform: translate(50%, -50%) rotate(15deg);
-            animation: flowerFadeIn 2s ease-out 1.3s forwards, flowerSway1 7.5s ease-in-out infinite 4.4s;
-        }
-
-        .flower-right-6 {
-            top: 68%;
-            right: 0;
-            width: 170px;
-            height: 170px;
-            transform: translate(50%, -50%) rotate(-22deg);
-            animation: flowerFadeIn 2s ease-out 1.4s forwards, flowerSway2 8.5s ease-in-out infinite 4.6s;
-        }
-
-        .flower-right-7 {
-            top: 80%;
-            right: 0;
-            width: 160px;
-            height: 160px;
-            transform: translate(50%, -50%) rotate(14deg);
-            animation: flowerFadeIn 2s ease-out 1.45s forwards, flowerSway1 9s ease-in-out infinite 4.7s;
-        }
-
-        .flower-right-8 {
-            top: 92%;
-            right: 0;
-            width: 175px;
-            height: 175px;
-            transform: translate(50%, -50%) rotate(-18deg);
-            animation: flowerFadeIn 2s ease-out 1.48s forwards, flowerSway2 7.5s ease-in-out infinite 4.8s;
-        }
-
-        /* === CANTO INFERIOR DIREITO === */
-        .flower-corner-br {
-            bottom: 0;
-            right: 0;
-            width: 180px;
-            height: 180px;
-            transform: translate(50%, 50%);
-            animation: flowerFadeIn 2s ease-out 1.5s forwards, flowerSway1 7s ease-in-out infinite 4.8s;
-        }
-
-        /* === BORDA INFERIOR === */
-        .flower-bottom-1 {
-            bottom: 0;
-            right: 10%;
-            width: 170px;
-            height: 170px;
-            transform: translate(50%, 50%) rotate(-16deg);
-            animation: flowerFadeIn 2s ease-out 1.6s forwards, flowerSway2 9s ease-in-out infinite 5s;
-        }
-
-        .flower-bottom-2 {
-            bottom: 0;
-            right: 25%;
-            width: 165px;
-            height: 165px;
-            transform: translate(50%, 50%) rotate(14deg);
-            animation: flowerFadeIn 2s ease-out 1.7s forwards, flowerSway1 8s ease-in-out infinite 5.2s;
-        }
-
-        .flower-bottom-3 {
-            bottom: 0;
-            right: 40%;
-            width: 175px;
-            height: 175px;
-            transform: translate(50%, 50%) rotate(-18deg);
-            animation: flowerFadeIn 2s ease-out 1.8s forwards, flowerSway2 7.5s ease-in-out infinite 5.4s;
-        }
-
-        .flower-bottom-4 {
-            bottom: 0;
-            right: 55%;
-            width: 160px;
-            height: 160px;
-            transform: translate(50%, 50%) rotate(22deg);
-            animation: flowerFadeIn 2s ease-out 1.9s forwards, flowerSway1 8.5s ease-in-out infinite 5.6s;
-        }
-
-        .flower-bottom-5 {
-            bottom: 0;
-            right: 70%;
-            width: 170px;
-            height: 170px;
-            transform: translate(50%, 50%) rotate(-14deg);
-            animation: flowerFadeIn 2s ease-out 2s forwards, flowerSway2 7s ease-in-out infinite 5.8s;
-        }
-
-        .flower-bottom-6 {
-            bottom: 0;
-            right: 85%;
-            width: 165px;
-            height: 165px;
-            transform: translate(50%, 50%) rotate(16deg);
-            animation: flowerFadeIn 2s ease-out 2.1s forwards, flowerSway1 9s ease-in-out infinite 6s;
-        }
-
-        /* === CANTO INFERIOR ESQUERDO === */
+    /* Responsivo */
+    @media (max-width: 768px) {
+        .flower-corner-tl,
+        .flower-corner-tr,
+        .flower-corner-br,
         .flower-corner-bl {
-            bottom: 0;
-            left: 0;
-            width: 180px;
-            height: 180px;
-            transform: translate(-50%, 50%);
-            animation: flowerFadeIn 2s ease-out 2.2s forwards, flowerSway2 8s ease-in-out infinite 6.2s;
+            width: 280px !important;
+            height: 280px !important;
         }
+    }
 
-        /* === BORDA ESQUERDA - MAIS DENSA === */
-        .flower-left-1 {
-            top: 8%;
-            left: 0;
-            width: 165px;
-            height: 165px;
-            transform: translate(-50%, -50%) rotate(-20deg);
-            animation: flowerFadeIn 2s ease-out 2.3s forwards, flowerSway1 7.5s ease-in-out infinite 6.4s;
+    @media (max-width: 480px) {
+        .flower-corner-tl,
+        .flower-corner-tr,
+        .flower-corner-br,
+        .flower-corner-bl {
+            width: 200px !important;
+            height: 200px !important;
         }
+    }
 
-        .flower-left-2 {
-            top: 20%;
-            left: 0;
-            width: 170px;
-            height: 170px;
-            transform: translate(-50%, -50%) rotate(18deg);
-            animation: flowerFadeIn 2s ease-out 2.4s forwards, flowerSway2 8.5s ease-in-out infinite 6.6s;
+    /* Elementos abstratos decorativos */
+    .abstract-line {
+        position: fixed;
+        pointer-events: none;
+        z-index: 5;
+    }
+
+    .line-1 {
+        top: 10%;
+        left: 5%;
+        width: 1px;
+        height: 200px;
+        background: linear-gradient(to bottom, transparent, rgba(180, 150, 130, 0.15), transparent);
+        animation: lineFloat 8s ease-in-out infinite;
+    }
+
+    .line-2 {
+        top: 20%;
+        right: 8%;
+        width: 150px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.15), transparent);
+        animation: lineFloat 10s ease-in-out infinite 1s;
+    }
+
+    .line-3 {
+        bottom: 15%;
+        left: 3%;
+        width: 180px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.12), transparent);
+        animation: lineFloat 9s ease-in-out infinite 2s;
+    }
+
+    .line-4 {
+        bottom: 25%;
+        right: 5%;
+        width: 1px;
+        height: 160px;
+        background: linear-gradient(to bottom, transparent, rgba(180, 150, 130, 0.12), transparent);
+        animation: lineFloat 11s ease-in-out infinite 1.5s;
+    }
+
+    .line-5 {
+        top: 50%;
+        left: 2%;
+        width: 100px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.1), transparent);
+        animation: lineFloat 7s ease-in-out infinite 3s;
+        transform: rotate(30deg);
+    }
+
+    .line-6 {
+        top: 60%;
+        right: 3%;
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.1), transparent);
+        animation: lineFloat 8.5s ease-in-out infinite 2.5s;
+        transform: rotate(-25deg);
+    }
+
+    @keyframes lineFloat {
+        0%, 100% {
+            opacity: 0.3;
+            transform: translateY(0);
         }
-
-        .flower-left-3 {
-            top: 32%;
-            left: 0;
-            width: 175px;
-            height: 175px;
-            transform: translate(-50%, -50%) rotate(-15deg);
-            animation: flowerFadeIn 2s ease-out 2.5s forwards, flowerSway1 7s ease-in-out infinite 6.8s;
+        50% {
+            opacity: 0.6;
+            transform: translateY(-15px);
         }
+    }
 
-        .flower-left-4 {
-            top: 44%;
-            left: 0;
-            width: 160px;
-            height: 160px;
-            transform: translate(-50%, -50%) rotate(20deg);
-            animation: flowerFadeIn 2s ease-out 2.6s forwards, flowerSway2 9s ease-in-out infinite 7s;
+    /* Navegação lateral - visível sempre */
+    .nav-line {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+    }
+
+    .nav-path {
+        width: 1px;
+        height: 200px;
+        background: linear-gradient(to bottom, 
+            rgba(180, 150, 130, 0) 0%,
+            rgba(180, 150, 130, 0.3) 20%,
+            rgba(180, 150, 130, 0.3) 80%,
+            rgba(180, 150, 130, 0) 100%
+        );
+        position: relative;
+    }
+
+    .nav-dot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        border: 1px solid #b49682;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .nav-dot.active {
+        background: #b49682;
+        box-shadow: 0 0 0 4px rgba(180, 150, 130, 0.15);
+    }
+
+    .nav-dot:hover {
+        transform: translateX(-50%) scale(1.3);
+    }
+
+    /* Container principal */
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 40px;
+        width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        padding: 60px 0;
+    }
+
+    /* Logo Container */
+    .logo-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 40px;
+        opacity: 0;
+        animation: fadeInScale 1.2s ease-out 0.3s forwards;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+        transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover {
+        transform: scale(1.05);
+    }
+
+    .logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
         }
-
-        .flower-left-5 {
-            top: 56%;
-            left: 0;
-            width: 170px;
-            height: 170px;
-            transform: translate(-50%, -50%) rotate(-12deg);
-            animation: flowerFadeIn 2s ease-out 2.7s forwards, flowerSway1 8s ease-in-out infinite 7.2s;
+        to {
+            opacity: 1;
+            transform: scale(1);
         }
+    }
 
-        .flower-left-6 {
-            top: 68%;
-            left: 0;
-            width: 165px;
-            height: 165px;
-            transform: translate(-50%, -50%) rotate(24deg);
-            animation: flowerFadeIn 2s ease-out 2.8s forwards, flowerSway2 7.5s ease-in-out infinite 7.4s;
+    /* Save the Date - mais marcante */
+    .save-text {
+        font-family: 'Cormorant', serif;
+        font-size: 2.5rem;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        color: #b49682;
+        font-weight: 400;
+        margin-bottom: 50px;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.6s forwards;
+    }
+
+    .name-container {
+        margin-bottom: 40px;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.9s forwards;
+    }
+
+    .name {
+        font-family: 'Cormorant', serif;
+        font-size: 4rem;
+        font-weight: 300;
+        color: #2a2a2a;
+        letter-spacing: 3px;
+        display: inline;
+    }
+
+    .age {
+        font-family: 'Cormorant', serif;
+        font-size: 4rem;
+        font-weight: 300;
+        color: #b49682;
+        display: inline;
+        margin-left: 15px;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
         }
-
-        .flower-left-7 {
-            top: 80%;
-            left: 0;
-            width: 175px;
-            height: 175px;
-            transform: translate(-50%, -50%) rotate(-16deg);
-            animation: flowerFadeIn 2s ease-out 2.85s forwards, flowerSway1 8.5s ease-in-out infinite 7.5s;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
+    }
 
-        .flower-left-8 {
-            top: 92%;
-            left: 0;
-            width: 160px;
-            height: 160px;
-            transform: translate(-50%, -50%) rotate(22deg);
-            animation: flowerFadeIn 2s ease-out 2.88s forwards, flowerSway2 9s ease-in-out infinite 7.6s;
-        }
+    /* Contador */
+    .countdown-section {
+        margin-top: 60px;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 1.2s forwards;
+    }
 
-        /* Animações */
-        @keyframes flowerFadeIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 0.7;
-                transform: scale(1);
-            }
-        }
+    .countdown-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 30px;
+    }
 
-        @keyframes flowerSway1 {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            25% {
-                transform: translateY(-18px) rotate(5deg) scale(1.05);
-            }
-            50% {
-                transform: translateY(-10px) rotate(-3deg) scale(1.02);
-            }
-            75% {
-                transform: translateY(-15px) rotate(4deg) scale(1.03);
-            }
-        }
+    .time-block {
+        text-align: center;
+    }
 
-        @keyframes flowerSway2 {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            33% {
-                transform: translateY(-16px) rotate(-4deg) scale(1.04);
-            }
-            66% {
-                transform: translateY(-12px) rotate(6deg) scale(1.02);
-            }
-        }
+    .time-number {
+        font-family: 'Cormorant', serif;
+        font-size: 3.5rem;
+        font-weight: 300;
+        color: #2a2a2a;
+        line-height: 1;
+        display: block;
+        margin-bottom: 8px;
+    }
 
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .flower-top-2,
-            .flower-top-4,
-            .flower-top-6,
-            .flower-right-2,
-            .flower-right-4,
-            .flower-right-6,
-            .flower-bottom-2,
-            .flower-bottom-4,
-            .flower-bottom-6,
-            .flower-left-2,
-            .flower-left-4,
-            .flower-left-6 {
-                display: none;
-            }
+    .time-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #b49682;
+        font-weight: 300;
+    }
 
-            .flower-decoration {
-                width: 120px !important;
-                height: 120px !important;
-            }
-        }
+    .divider {
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(to bottom, 
+            rgba(180, 150, 130, 0),
+            rgba(180, 150, 130, 0.3),
+            rgba(180, 150, 130, 0)
+        );
+        margin: 40px auto;
+    }
 
-        @media (max-width: 480px) {
-            .flower-decoration {
-                width: 100px !important;
-                height: 100px !important;
-            }
-        }
+    /* Sections */
+    section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 1.2s ease-out;
+        padding: 80px 0;
+        width: 100%;
+    }
 
-        /* Elementos abstratos decorativos */
-        .abstract-line {
-            position: fixed;
-            pointer-events: none;
-            z-index: 5;
-        }
+    section.visible {
+        opacity: 1;
+    }
 
-        .line-1 {
-            top: 10%;
-            left: 5%;
-            width: 1px;
-            height: 200px;
-            background: linear-gradient(to bottom, transparent, rgba(180, 150, 130, 0.15), transparent);
-            animation: lineFloat 8s ease-in-out infinite;
-        }
+    .section-content {
+        max-width: 600px;
+        text-align: center;
+        width: 100%;
+    }
 
-        .line-2 {
-            top: 20%;
-            right: 8%;
-            width: 150px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.15), transparent);
-            animation: lineFloat 10s ease-in-out infinite 1s;
-        }
+    .section-title {
+        font-family: 'Cormorant', serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: #2a2a2a;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
 
-        .line-3 {
-            bottom: 15%;
-            left: 3%;
-            width: 180px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.12), transparent);
-            animation: lineFloat 9s ease-in-out infinite 2s;
-        }
+    .info-grid {
+        display: grid;
+        gap: 25px;
+        text-align: left;
+        margin-top: 40px;
+    }
 
-        .line-4 {
-            bottom: 25%;
-            right: 5%;
-            width: 1px;
-            height: 160px;
-            background: linear-gradient(to bottom, transparent, rgba(180, 150, 130, 0.12), transparent);
-            animation: lineFloat 11s ease-in-out infinite 1.5s;
-        }
+    .info-item {
+        border-bottom: 0.5px solid rgba(180, 150, 130, 0.2);
+        padding-bottom: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
 
-        .line-5 {
-            top: 50%;
-            left: 2%;
-            width: 100px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.1), transparent);
-            animation: lineFloat 7s ease-in-out infinite 3s;
-            transform: rotate(30deg);
-        }
+    .info-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #b49682;
+        font-weight: 300;
+    }
 
-        .line-6 {
-            top: 60%;
-            right: 3%;
-            width: 120px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(180, 150, 130, 0.1), transparent);
-            animation: lineFloat 8.5s ease-in-out infinite 2.5s;
-            transform: rotate(-25deg);
-        }
+    .info-value {
+        font-family: 'Cormorant', serif;
+        font-size: 1.3rem;
+        color: #2a2a2a;
+        font-weight: 400;
+        text-align: right;
+    }
 
-        @keyframes lineFloat {
-            0%, 100% {
-                opacity: 0.3;
-                transform: translateY(0);
-            }
-            50% {
-                opacity: 0.6;
-                transform: translateY(-15px);
-            }
-        }
+    .location-link {
+        color: #b49682;
+        text-decoration: none;
+        border-bottom: 0.5px solid #b49682;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
 
-        /* Navegação lateral - visível sempre */
-        .nav-line {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-        }
+    .location-link:hover {
+        color: #8a7355;
+        border-bottom-color: #8a7355;
+    }
 
-        .nav-path {
-            width: 1px;
-            height: 200px;
-            background: linear-gradient(to bottom, 
-                rgba(180, 150, 130, 0) 0%,
-                rgba(180, 150, 130, 0.3) 20%,
-                rgba(180, 150, 130, 0.3) 80%,
-                rgba(180, 150, 130, 0) 100%
-            );
-            position: relative;
-        }
+    /* Botão RSVP */
+    .rsvp-button {
+        display: inline-block;
+        margin-top: 40px;
+        padding: 15px 50px;
+        border: 0.5px solid #b49682;
+        background: transparent;
+        color: #b49682;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 300;
+        transition: all 0.4s ease;
+        cursor: pointer;
+    }
 
-        .nav-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 8px;
-            height: 8px;
-            background: transparent;
-            border: 1px solid #b49682;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
+    .rsvp-button:hover {
+        background: #b49682;
+        color: #fafafa;
+    }
 
-        .nav-dot.active {
-            background: #b49682;
-            box-shadow: 0 0 0 4px rgba(180, 150, 130, 0.15);
-        }
+    /* Formulário */
+    .form-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(250, 250, 250, 0.98);
+        z-index: 1000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
 
-        .nav-dot:hover {
-            transform: translateX(-50%) scale(1.3);
-        }
+    .form-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
 
-        /* Container principal */
+    .form-container {
+        max-width: 500px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 60px 40px;
+        position: relative;
+    }
+
+    .close-form {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 24px;
+        color: #b49682;
+        cursor: pointer;
+        border: none;
+        background: none;
+        line-height: 1;
+        font-weight: 200;
+    }
+
+    .form-title {
+        font-family: 'Cormorant', serif;
+        font-size: 2rem;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #2a2a2a;
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #b49682;
+        margin-bottom: 10px;
+        font-weight: 300;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 0;
+        border: none;
+        border-bottom: 0.5px solid rgba(180, 150, 130, 0.3);
+        background: transparent;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        color: #2a2a2a;
+        font-weight: 300;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-bottom-color: #b49682;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+        padding-top: 12px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 15px;
+        border: 0.5px solid #b49682;
+        background: transparent;
+        color: #b49682;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-top: 30px;
+        font-weight: 300;
+        transition: all 0.4s ease;
+    }
+
+    .submit-btn:hover {
+        background: #b49682;
+        color: #fafafa;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 20px;
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 60px 0;
-        }
-
-        /* Logo Container */
-        .logo-container {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 40px;
-            opacity: 0;
-            animation: fadeInScale 1.2s ease-out 0.3s forwards;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Save the Date - mais marcante */
         .save-text {
-            font-family: 'Cormorant', serif;
-            font-size: 2.5rem;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            color: #b49682;
-            font-weight: 400;
-            margin-bottom: 50px;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.6s forwards;
-        }
-
-        .name-container {
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.9s forwards;
+            font-size: 1.8rem;
+            letter-spacing: 5px;
         }
 
         .name {
-            font-family: 'Cormorant', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            color: #2a2a2a;
-            letter-spacing: 3px;
-            display: inline;
+            font-size: 2.8rem;
         }
 
         .age {
-            font-family: 'Cormorant', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            color: #b49682;
-            display: inline;
-            margin-left: 15px;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Contador */
-        .countdown-section {
-            margin-top: 60px;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 1.2s forwards;
-        }
-
-        .countdown-wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 30px;
-        }
-
-        .time-block {
-            text-align: center;
-        }
-
-        .time-number {
-            font-family: 'Cormorant', serif;
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: #2a2a2a;
-            line-height: 1;
+            font-size: 2.8rem;
             display: block;
-            margin-bottom: 8px;
-        }
-
-        .time-label {
-            font-size: 9px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #b49682;
-            font-weight: 300;
-        }
-
-        .divider {
-            width: 1px;
-            height: 60px;
-            background: linear-gradient(to bottom, 
-                rgba(180, 150, 130, 0),
-                rgba(180, 150, 130, 0.3),
-                rgba(180, 150, 130, 0)
-            );
-            margin: 40px auto;
-        }
-
-        /* Sections */
-        section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 1.2s ease-out;
-            padding: 80px 0;
-        }
-
-        section.visible {
-            opacity: 1;
-        }
-
-        .section-content {
-            max-width: 600px;
-            text-align: center;
-            width: 100%;
+            margin-left: 0;
+            margin-top: 5px;
         }
 
         .section-title {
-            font-family: 'Cormorant', serif;
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #2a2a2a;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
+            font-size: 2rem;
         }
 
-        .info-grid {
-            display: grid;
+        .countdown-wrapper {
             gap: 25px;
-            text-align: left;
-            margin-top: 40px;
         }
 
-        .info-item {
-            border-bottom: 0.5px solid rgba(180, 150, 130, 0.2);
-            padding-bottom: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        .info-label {
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #b49682;
-            font-weight: 300;
-        }
-
-        .info-value {
-            font-family: 'Cormorant', serif;
-            font-size: 1.3rem;
-            color: #2a2a2a;
-            font-weight: 400;
-            text-align: right;
-        }
-
-        .location-link {
-            color: #b49682;
-            text-decoration: none;
-            border-bottom: 0.5px solid #b49682;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .location-link:hover {
-            color: #8a7355;
-            border-bottom-color: #8a7355;
-        }
-
-        /* Botão RSVP */
-        .rsvp-button {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 15px 50px;
-            border: 0.5px solid #b49682;
-            background: transparent;
-            color: #b49682;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: 300;
-            transition: all 0.4s ease;
-            cursor: pointer;
-        }
-
-        .rsvp-button:hover {
-            background: #b49682;
-            color: #fafafa;
-        }
-
-        /* Formulário */
-        .form-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(250, 250, 250, 0.98);
-            z-index: 1000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .form-overlay.active {
-            display: flex;
-            opacity: 1;
+        .time-number {
+            font-size: 2.8rem;
         }
 
         .form-container {
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 60px 40px;
-            position: relative;
+            padding: 40px 20px;
         }
 
-        .close-form {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 24px;
-            color: #b49682;
-            cursor: pointer;
-            border: none;
-            background: none;
-            line-height: 1;
-            font-weight: 200;
+        .info-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
         }
 
-        .form-title {
-            font-family: 'Cormorant', serif;
-            font-size: 2rem;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2a2a2a;
+        .info-value {
+            text-align: left;
         }
 
-        .form-group {
-            margin-bottom: 30px;
+        .nav-line {
+            right: 15px;
         }
+    }
 
-        .form-group label {
-            display: block;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #b49682;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 0;
-            border: none;
-            border-bottom: 0.5px solid rgba(180, 150, 130, 0.3);
-            background: transparent;
-            font-size: 14px;
-            font-family: 'Montserrat', sans-serif;
-            color: #2a2a2a;
-            font-weight: 300;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-bottom-color: #b49682;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-            padding-top: 12px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            border: 0.5px solid #b49682;
-            background: transparent;
-            color: #b49682;
-            font-size: 10px;
+    @media (max-width: 480px) {
+        .save-text {
+            font-size: 1.5rem;
             letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            margin-top: 30px;
-            font-weight: 300;
-            transition: all 0.4s ease;
         }
 
-        .submit-btn:hover {
-            background: #b49682;
-            color: #fafafa;
+        .name {
+            font-size: 2.2rem;
         }
 
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-
-            .save-text {
-                font-size: 1.8rem;
-                letter-spacing: 5px;
-            }
-
-            .name {
-                font-size: 2.8rem;
-            }
-
-            .age {
-                font-size: 2.8rem;
-                display: block;
-                margin-left: 0;
-                margin-top: 5px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .countdown-wrapper {
-                gap: 25px;
-            }
-
-            .time-number {
-                font-size: 2.8rem;
-            }
-
-            .form-container {
-                padding: 40px 20px;
-            }
-
-            .info-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-
-            .info-value {
-                text-align: left;
-            }
-
-            .nav-line {
-                right: 15px;
-            }
+        .age {
+            font-size: 2.2rem;
         }
 
-        @media (max-width: 480px) {
-            .save-text {
-                font-size: 1.5rem;
-                letter-spacing: 3px;
-            }
-
-            .name {
-                font-size: 2.2rem;
-            }
-
-            .age {
-                font-size: 2.2rem;
-            }
-
-            .countdown-wrapper {
-                gap: 15px;
-                flex-wrap: wrap;
-            }
-
-            .time-number {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .logo-container {
-                width: 90px;
-                height: 90px;
-            }
+        .countdown-wrapper {
+            gap: 15px;
+            flex-wrap: wrap;
         }
-    </style>
+
+        .time-number {
+            font-size: 2.2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .logo-container {
+            width: 90px;
+            height: 90px;
+        }
+    }
+</style>
+```
+
 </head>
 <body>
-    <div class="page-wrapper">
     <!-- 
     ═══════════════════════════════════════════════════════════════
-    FLORES PNG - MOLDURA COMPLETA AO REDOR DO PERÍMETRO
+    FLORES PNG - 4 FLORES GRANDES NOS CANTOS
     ═══════════════════════════════════════════════════════════════
-    
-    28 flores distribuídas uniformemente ao redor de TODA a página:
-    - 4 cantos
-    - 6 no topo
-    - 6 embaixo
-    - 6 na esquerda  
-    - 6 na direita
-    
-    Você precisa de apenas 4 arquivos PNG na raiz:
-    - flor1.png
-    - flor2.png
-    - flor3.png
-    - flor4.png
-    
-    ═══════════════════════════════════════════════════════════════
-    -->
-    
-    <!-- CANTO SUPERIOR ESQUERDO -->
-    <div class="flower-decoration flower-corner-tl">
-        <img src="flor1.png" alt="">
-    </div>
 
-    <!-- BORDA SUPERIOR -->
-    <div class="flower-decoration flower-top-1">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-top-2">
-        <img src="flor3.png" alt="">
-    </div>
-    <div class="flower-decoration flower-top-3">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-top-4">
-        <img src="flor1.png" alt="">
-    </div>
-    <div class="flower-decoration flower-top-5">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-top-6">
-        <img src="flor3.png" alt="">
-    </div>
+```
+Apenas 4 imagens PNG grandes, uma em cada canto:
+- flor1.png (canto superior esquerdo)
+- flor2.png (canto superior direito)
+- flor3.png (canto inferior direito)
+- flor4.png (canto inferior esquerdo)
 
-    <!-- CANTO SUPERIOR DIREITO -->
-    <div class="flower-decoration flower-corner-tr">
-        <img src="flor4.png" alt="">
-    </div>
+Tamanho: 400px (desktop), 280px (tablet), 200px (mobile)
+Metade para fora, metade para dentro da tela
+Fixas na viewport (acompanham o scroll)
 
-    <!-- BORDA DIREITA -->
-    <div class="flower-decoration flower-right-1">
-        <img src="flor1.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-2">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-3">
-        <img src="flor3.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-4">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-5">
-        <img src="flor1.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-6">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-7">
-        <img src="flor3.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-8">
-        <img src="flor4.png" alt="">
-    </div>
+═══════════════════════════════════════════════════════════════
+-->
 
-    <!-- CANTO INFERIOR DIREITO -->
-    <div class="flower-decoration flower-corner-br">
-        <img src="flor3.png" alt="">
-    </div>
+<!-- Canto Superior Esquerdo -->
+<div class="flower-decoration flower-corner-tl">
+    <img src="flor1.png" alt="">
+</div>
 
-    <!-- BORDA INFERIOR -->
-    <div class="flower-decoration flower-bottom-1">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-bottom-2">
-        <img src="flor1.png" alt="">
-    </div>
-    <div class="flower-decoration flower-bottom-3">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-bottom-4">
-        <img src="flor3.png" alt="">
-    </div>
-    <div class="flower-decoration flower-bottom-5">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-bottom-6">
-        <img src="flor1.png" alt="">
-    </div>
+<!-- Canto Superior Direito -->
+<div class="flower-decoration flower-corner-tr">
+    <img src="flor2.png" alt="">
+</div>
 
-    <!-- CANTO INFERIOR ESQUERDO -->
-    <div class="flower-decoration flower-corner-bl">
-        <img src="flor2.png" alt="">
-    </div>
+<!-- Canto Inferior Direito -->
+<div class="flower-decoration flower-corner-br">
+    <img src="flor3.png" alt="">
+</div>
 
-    <!-- BORDA ESQUERDA -->
-    <div class="flower-decoration flower-left-1">
-        <img src="flor3.png" alt="">
-    </div>
-    <div class="flower-decoration flower-left-2">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-left-3">
-        <img src="flor1.png" alt="">
-    </div>
-    <div class="flower-decoration flower-left-4">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-left-5">
-        <img src="flor3.png" alt="">
-    </div>
-    <div class="flower-decoration flower-left-6">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-left-7">
-        <img src="flor1.png" alt="">
-    </div>
-    <div class="flower-decoration flower-left-8">
-        <img src="flor2.png" alt="">
-    </div>
+<!-- Canto Inferior Esquerdo -->
+<div class="flower-decoration flower-corner-bl">
+    <img src="flor4.png" alt="">
+</div>
 
-    <!-- Elementos abstratos decorativos -->
-    <div class="abstract-line line-1"></div>
-    <div class="abstract-line line-2"></div>
-    <div class="abstract-line line-3"></div>
-    <div class="abstract-line line-4"></div>
-    <div class="abstract-line line-5"></div>
-    <div class="abstract-line line-6"></div>
+<!-- Elementos abstratos decorativos -->
+<div class="abstract-line line-1"></div>
+<div class="abstract-line line-2"></div>
+<div class="abstract-line line-3"></div>
+<div class="abstract-line line-4"></div>
+<div class="abstract-line line-5"></div>
+<div class="abstract-line line-6"></div>
 
-    <!-- Navegação lateral -->
-    <div class="nav-line">
-        <div class="nav-path">
-            <div class="nav-dot active" style="top: 0" data-target="hero"></div>
-            <div class="nav-dot" style="top: 50%" data-target="info"></div>
-            <div class="nav-dot" style="top: 100%" data-target="rsvp"></div>
+<!-- Navegação lateral -->
+<div class="nav-line">
+    <div class="nav-path">
+        <div class="nav-dot active" style="top: 0" data-target="hero"></div>
+        <div class="nav-dot" style="top: 50%" data-target="info"></div>
+        <div class="nav-dot" style="top: 100%" data-target="rsvp"></div>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section id="hero" class="hero visible">
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Antonella">
         </div>
-    </div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero visible">
-        <div class="container">
-            <!-- Logo SVG -->
-            <div class="logo-container">
-                <img src="logo.png" alt="Logo Antonella">
-            </div>
-
-            <div class="save-text">Save the Date</div>
-            
-            <div class="name-container">
-                <h1 class="name">Antonella Ditadi</h1>
-                <span class="age">15 anos</span>
-            </div>
-
-            <div class="countdown-section">
-                <div class="countdown-wrapper">
-                    <div class="time-block">
-                        <span class="time-number" id="days">000</span>
-                        <span class="time-label">Dias</span>
-                    </div>
-                    <div class="time-block">
-                        <span class="time-number" id="hours">00</span>
-                        <span class="time-label">Horas</span>
-                    </div>
-                    <div class="time-block">
-                        <span class="time-number" id="minutes">00</span>
-                        <span class="time-label">Minutos</span>
-                    </div>
-                    <div class="time-block">
-                        <span class="time-number" id="seconds">00</span>
-                        <span class="time-label">Segundos</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Informações Section -->
-    <section id="info">
-        <div class="container">
-            <div class="section-content">
-                <h2 class="section-title">Informações</h2>
-                <div class="divider"></div>
-                
-                <div class="info-grid">
-                    <div class="info-item">
-                        <span class="info-label">Data</span>
-                        <span class="info-value">12 de Setembro, 2026</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Horário</span>
-                        <span class="info-value">19h30</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Local</span>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Casa+Olivo+1033" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="info-value location-link">
-                            Casa Olivo 1033
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10 6.5V10C10 10.55 9.55 11 9 11H2C1.45 11 1 10.55 1 10V3C1 2.45 1.45 2 2 2H5.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                                <path d="M7 1H11V5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M5 7L11 1" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP Section -->
-    <section id="rsvp">
-        <div class="container">
-            <div class="section-content">
-                <h2 class="section-title">Confirme sua presença</h2>
-                <div class="divider"></div>
-                <button class="rsvp-button" onclick="openForm()">Confirmar presença</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Form Overlay -->
-    <div class="form-overlay" id="formOverlay">
-        <div class="form-container">
-            <button class="close-form" onclick="closeForm()">×</button>
-            <h2 class="form-title">Confirme sua presença</h2>
-            
-            <form action="https://formspree.io/f/mqakbzdz" method="POST">
-                <div class="form-group">
-                    <label for="name">Nome completo</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="attendance">Confirmação</label>
-                    <select id="attendance" name="attendance" required>
-                        <option value="">Selecione</option>
-                        <option value="yes">Confirmo presença</option>
-                        <option value="no">Não poderei comparecer</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Mensagem (opcional)</label>
-                    <textarea id="message" name="message" placeholder="Deixe uma mensagem especial..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Enviar confirmação</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Contador
-        const eventDate = new Date('2026-09-12T19:30:00').getTime();
+        <div class="save-text">Save the Date</div>
         
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = eventDate - now;
+        <div class="name-container">
+            <h1 class="name">Antonella Ditadi</h1>
+            <span class="age">15 anos</span>
+        </div>
+
+        <div class="countdown-section">
+            <div class="countdown-wrapper">
+                <div class="time-block">
+                    <span class="time-number" id="days">000</span>
+                    <span class="time-label">Dias</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">Horas</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">Minutos</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Informações Section -->
+<section id="info">
+    <div class="container">
+        <div class="section-content">
+            <h2 class="section-title">Informações</h2>
+            <div class="divider"></div>
             
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = String(days).padStart(3, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        }
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Data</span>
+                    <span class="info-value">12 de Setembro, 2026</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Horário</span>
+                    <span class="info-value">19h30</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Local</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Casa+Olivo+1033" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="info-value location-link">
+                        Casa Olivo 1033
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6.5V10C10 10.55 9.55 11 9 11H2C1.45 11 1 10.55 1 10V3C1 2.45 1.45 2 2 2H5.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                            <path d="M7 1H11V5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 7L11 1" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RSVP Section -->
+<section id="rsvp">
+    <div class="container">
+        <div class="section-content">
+            <h2 class="section-title">Confirme sua presença</h2>
+            <div class="divider"></div>
+            <button class="rsvp-button" onclick="openForm()">Confirmar presença</button>
+        </div>
+    </div>
+</section>
+
+<!-- Form Overlay -->
+<div class="form-overlay" id="formOverlay">
+    <div class="form-container">
+        <button class="close-form" onclick="closeForm()">×</button>
+        <h2 class="form-title">Confirme sua presença</h2>
         
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
-        // Scroll reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.3 });
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Navegação
-        document.querySelectorAll('.nav-dot').forEach(dot => {
-            dot.addEventListener('click', function() {
-                const target = this.dataset.target;
-                document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
-                
-                document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Atualizar nav dots no scroll
-        window.addEventListener('scroll', () => {
-            const sections = ['hero', 'info', 'rsvp'];
-            const scrollPos = window.scrollY + window.innerHeight / 2;
+        <form action="https://formspree.io/f/mqakbzdz" method="POST">
+            <div class="form-group">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" name="name" required>
+            </div>
             
-            sections.forEach((section, index) => {
-                const element = document.getElementById(section);
-                if (element.offsetTop <= scrollPos && element.offsetTop + element.offsetHeight > scrollPos) {
-                    document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
-                    document.querySelectorAll('.nav-dot')[index].classList.add('active');
-                }
-            });
-        });
+            <div class="form-group">
+                <label for="attendance">Confirmação</label>
+                <select id="attendance" name="attendance" required>
+                    <option value="">Selecione</option>
+                    <option value="yes">Confirmo presença</option>
+                    <option value="no">Não poderei comparecer</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Mensagem (opcional)</label>
+                <textarea id="message" name="message" placeholder="Deixe uma mensagem especial..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Enviar confirmação</button>
+        </form>
+    </div>
+</div>
 
-        // Form
-        function openForm() {
-            document.getElementById('formOverlay').classList.add('active');
-        }
+<script>
+    // Contador
+    const eventDate = new Date('2026-09-12T19:30:00').getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = String(days).padStart(3, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-        function closeForm() {
-            document.getElementById('formOverlay').classList.remove('active');
-        }
-
-        // Fechar form com ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeForm();
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
         });
-    </script>
-    </div>
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Navegação
+    document.querySelectorAll('.nav-dot').forEach(dot => {
+        dot.addEventListener('click', function() {
+            const target = this.dataset.target;
+            document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+            
+            document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Atualizar nav dots no scroll
+    window.addEventListener('scroll', () => {
+        const sections = ['hero', 'info', 'rsvp'];
+        const scrollPos = window.scrollY + window.innerHeight / 2;
+        
+        sections.forEach((section, index) => {
+            const element = document.getElementById(section);
+            if (element.offsetTop <= scrollPos && element.offsetTop + element.offsetHeight > scrollPos) {
+                document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
+                document.querySelectorAll('.nav-dot')[index].classList.add('active');
+            }
+        });
+    });
+
+    // Form
+    function openForm() {
+        document.getElementById('formOverlay').classList.add('active');
+    }
+
+    function closeForm() {
+        document.getElementById('formOverlay').classList.remove('active');
+    }
+
+    // Fechar form com ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeForm();
+        }
+    });
+</script>
+```
+
 </body>
 </html>
