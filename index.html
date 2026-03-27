@@ -41,136 +41,205 @@
             color: #2a2a2a;
         }
 
-        /* Flores PNG nos cantos - FIXAS NO DOCUMENTO (não acompanham scroll) */
+        /* Flores PNG - MOLDURA DENSA (flores repetidas nas bordas) */
         .flower-decoration {
             position: absolute;
             pointer-events: none;
             z-index: 5;
             opacity: 0;
-            animation: flowerFadeIn 2s ease-out forwards;
         }
 
         .flower-decoration img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.06));
+            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.12));
         }
 
-        /* Posições das flores - BEM NOS CANTOS E DISCRETAS */
-        
-        /* TOPO ESQUERDO */
-        .flower-top-left {
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: 200px;
-            animation-delay: 0.5s;
-            transform-origin: top left;
+        /* BORDA SUPERIOR - flores sobrepostas */
+        .flower-top-1 {
+            top: -50%;
+            left: -8%;
+            width: 250px;
+            height: 250px;
+            animation: flowerFadeIn 2s ease-out 0.3s forwards, flowerSway1 8s ease-in-out infinite 2s;
         }
 
-        /* TOPO DIREITO */
-        .flower-top-right {
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            animation-delay: 1s;
-            transform-origin: top right;
-        }
-
-        /* RODAPÉ ESQUERDO */
-        .flower-bottom-left {
-            bottom: 0;
-            left: 0;
+        .flower-top-2 {
+            top: -45%;
+            left: 12%;
             width: 220px;
             height: 220px;
-            animation-delay: 1.5s;
-            transform-origin: bottom left;
+            animation: flowerFadeIn 2s ease-out 0.5s forwards, flowerSway2 9s ease-in-out infinite 2.5s;
+            transform: rotate(15deg);
         }
 
-        /* RODAPÉ DIREITO */
-        .flower-bottom-right {
-            bottom: 0;
-            right: 0;
-            width: 220px;
-            height: 220px;
-            animation-delay: 2s;
-            transform-origin: bottom right;
+        .flower-top-3 {
+            top: -48%;
+            left: 28%;
+            width: 240px;
+            height: 240px;
+            animation: flowerFadeIn 2s ease-out 0.7s forwards, flowerSway1 10s ease-in-out infinite 3s;
+            transform: rotate(-10deg);
         }
 
+        .flower-top-4 {
+            top: -52%;
+            right: 25%;
+            width: 230px;
+            height: 230px;
+            animation: flowerFadeIn 2s ease-out 0.9s forwards, flowerSway2 8.5s ease-in-out infinite 3.5s;
+            transform: rotate(20deg);
+        }
+
+        .flower-top-5 {
+            top: -46%;
+            right: 10%;
+            width: 215px;
+            height: 215px;
+            animation: flowerFadeIn 2s ease-out 1.1s forwards, flowerSway1 9.5s ease-in-out infinite 4s;
+            transform: rotate(-15deg);
+        }
+
+        .flower-top-6 {
+            top: -50%;
+            right: -8%;
+            width: 255px;
+            height: 255px;
+            animation: flowerFadeIn 2s ease-out 1.3s forwards, flowerSway2 10.5s ease-in-out infinite 4.5s;
+        }
+
+        /* BORDA INFERIOR - flores sobrepostas */
+        .flower-bottom-1 {
+            bottom: -50%;
+            left: -8%;
+            width: 260px;
+            height: 260px;
+            animation: flowerFadeIn 2s ease-out 0.4s forwards, flowerSway2 9s ease-in-out infinite 2.3s;
+        }
+
+        .flower-bottom-2 {
+            bottom: -45%;
+            left: 14%;
+            width: 235px;
+            height: 235px;
+            animation: flowerFadeIn 2s ease-out 0.6s forwards, flowerSway1 10s ease-in-out infinite 2.8s;
+            transform: rotate(-12deg);
+        }
+
+        .flower-bottom-3 {
+            bottom: -48%;
+            left: 30%;
+            width: 245px;
+            height: 245px;
+            animation: flowerFadeIn 2s ease-out 0.8s forwards, flowerSway2 8.5s ease-in-out infinite 3.3s;
+            transform: rotate(18deg);
+        }
+
+        .flower-bottom-4 {
+            bottom: -52%;
+            right: 28%;
+            width: 225px;
+            height: 225px;
+            animation: flowerFadeIn 2s ease-out 1s forwards, flowerSway1 9.5s ease-in-out infinite 3.8s;
+            transform: rotate(-20deg);
+        }
+
+        .flower-bottom-5 {
+            bottom: -46%;
+            right: 12%;
+            width: 240px;
+            height: 240px;
+            animation: flowerFadeIn 2s ease-out 1.2s forwards, flowerSway2 10.5s ease-in-out infinite 4.3s;
+            transform: rotate(10deg);
+        }
+
+        .flower-bottom-6 {
+            bottom: -50%;
+            right: -8%;
+            width: 250px;
+            height: 250px;
+            animation: flowerFadeIn 2s ease-out 1.4s forwards, flowerSway1 8s ease-in-out infinite 4.8s;
+        }
+
+        /* Animações */
         @keyframes flowerFadeIn {
             0% {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: scale(0.85) translateY(30px);
             }
             100% {
-                opacity: 0.4;
-                transform: scale(1);
+                opacity: 0.5;
+                transform: scale(1) translateY(0);
             }
         }
 
-        /* Animações suaves de flutuação */
-        .flower-top-left {
-            animation: flowerFadeIn 2s ease-out forwards, flowerFloat1 10s ease-in-out infinite 2s;
-        }
-
-        .flower-top-right {
-            animation: flowerFadeIn 2s ease-out forwards, flowerFloat2 11s ease-in-out infinite 2.5s;
-        }
-
-        .flower-bottom-left {
-            animation: flowerFadeIn 2s ease-out forwards, flowerFloat1 12s ease-in-out infinite 3s;
-        }
-
-        .flower-bottom-right {
-            animation: flowerFadeIn 2s ease-out forwards, flowerFloat2 10.5s ease-in-out infinite 3.5s;
-        }
-
-        @keyframes flowerFloat1 {
+        /* Movimento de balanço suave 1 */
+        @keyframes flowerSway1 {
             0%, 100% {
-                transform: scale(1) rotate(0deg);
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-20px) rotate(5deg) scale(1.05);
             }
             50% {
-                transform: scale(1.03) rotate(2deg);
+                transform: translateY(-10px) rotate(-3deg) scale(1.02);
+            }
+            75% {
+                transform: translateY(-15px) rotate(4deg) scale(1.03);
             }
         }
 
-        @keyframes flowerFloat2 {
+        /* Movimento de balanço suave 2 */
+        @keyframes flowerSway2 {
             0%, 100% {
-                transform: scale(1) rotate(0deg);
+                transform: translateY(0) rotate(0deg) scale(1);
             }
-            50% {
-                transform: scale(1.03) rotate(-2deg);
+            33% {
+                transform: translateY(-18px) rotate(-4deg) scale(1.04);
+            }
+            66% {
+                transform: translateY(-12px) rotate(6deg) scale(1.02);
             }
         }
 
-        /* Responsivo - flores menores em mobile */
+        /* Responsivo - menos flores e menores em mobile */
         @media (max-width: 768px) {
-            .flower-top-left,
-            .flower-top-right {
-                width: 140px !important;
-                height: 140px !important;
+            .flower-top-2,
+            .flower-top-3,
+            .flower-top-4,
+            .flower-top-5,
+            .flower-bottom-2,
+            .flower-bottom-3,
+            .flower-bottom-4,
+            .flower-bottom-5 {
+                display: none;
             }
 
-            .flower-bottom-left,
-            .flower-bottom-right {
+            .flower-top-1,
+            .flower-top-6 {
                 width: 150px !important;
                 height: 150px !important;
+            }
+
+            .flower-bottom-1,
+            .flower-bottom-6 {
+                width: 160px !important;
+                height: 160px !important;
             }
         }
 
         @media (max-width: 480px) {
-            .flower-top-left,
-            .flower-top-right {
-                width: 110px !important;
-                height: 110px !important;
-            }
-
-            .flower-bottom-left,
-            .flower-bottom-right {
+            .flower-top-1,
+            .flower-top-6 {
                 width: 120px !important;
                 height: 120px !important;
+            }
+
+            .flower-bottom-1,
+            .flower-bottom-6 {
+                width: 130px !important;
+                height: 130px !important;
             }
         }
 
@@ -727,40 +796,60 @@
 <body>
     <!-- 
     ═══════════════════════════════════════════════════════════════
-    FLORES PNG - 4 CANTOS (discretas e fixas no documento)
+    FLORES PNG - MOLDURA DENSA (4 imagens repetidas)
     ═══════════════════════════════════════════════════════════════
     
-    INSTRUÇÕES:
-    1. Salve 4 imagens PNG de flores com fundo transparente na pasta
-    2. Nomeie os arquivos como:
-       - flor1.png (canto superior esquerdo)
-       - flor2.png (canto superior direito)
-       - flor3.png (canto inferior esquerdo)
-       - flor4.png (canto inferior direito)
+    Você precisa de apenas 4 arquivos PNG:
+    - flor1.png
+    - flor2.png  
+    - flor3.png
+    - flor4.png
     
-    As flores ficarão BEM nos cantos, discretas (40% opacidade)
-    Elas NÃO acompanham o scroll - ficam fixas no documento
+    Elas serão repetidas várias vezes nas bordas superior e inferior
+    criando um efeito de canteiro denso com flores sobrepostas.
+    
+    Coloque os 4 arquivos PNG na raiz junto com index.html
     
     ═══════════════════════════════════════════════════════════════
     -->
     
-    <!-- Canto Superior Esquerdo -->
-    <div class="flower-decoration flower-top-left">
+    <!-- BORDA SUPERIOR - 6 flores -->
+    <div class="flower-decoration flower-top-1">
         <img src="flor1.png" alt="">
     </div>
-
-    <!-- Canto Superior Direito -->
-    <div class="flower-decoration flower-top-right">
+    <div class="flower-decoration flower-top-2">
+        <img src="flor2.png" alt="">
+    </div>
+    <div class="flower-decoration flower-top-3">
+        <img src="flor3.png" alt="">
+    </div>
+    <div class="flower-decoration flower-top-4">
+        <img src="flor4.png" alt="">
+    </div>
+    <div class="flower-decoration flower-top-5">
+        <img src="flor1.png" alt="">
+    </div>
+    <div class="flower-decoration flower-top-6">
         <img src="flor2.png" alt="">
     </div>
 
-    <!-- Canto Inferior Esquerdo -->
-    <div class="flower-decoration flower-bottom-left">
+    <!-- BORDA INFERIOR - 6 flores -->
+    <div class="flower-decoration flower-bottom-1">
         <img src="flor3.png" alt="">
     </div>
-
-    <!-- Canto Inferior Direito -->
-    <div class="flower-decoration flower-bottom-right">
+    <div class="flower-decoration flower-bottom-2">
+        <img src="flor4.png" alt="">
+    </div>
+    <div class="flower-decoration flower-bottom-3">
+        <img src="flor1.png" alt="">
+    </div>
+    <div class="flower-decoration flower-bottom-4">
+        <img src="flor2.png" alt="">
+    </div>
+    <div class="flower-decoration flower-bottom-5">
+        <img src="flor3.png" alt="">
+    </div>
+    <div class="flower-decoration flower-bottom-6">
         <img src="flor4.png" alt="">
     </div>
 
@@ -784,23 +873,9 @@
     <!-- Hero Section -->
     <section id="hero" class="hero visible">
         <div class="container">
-            <!-- Logo SVG - ADICIONE SEU ARQUIVO AQUI -->
+            <!-- Logo SVG -->
             <div class="logo-container">
-                <!-- 
-                    INSTRUÇÕES PARA O LOGO:
-                    1. Cole seu arquivo SVG completo aqui dentro
-                    2. Remova este comentário
-                    
-                    O SVG deve começar com <svg> e terminar com </svg>
-                    Exemplo do que você vai colar:
-                    
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <path d="..."/>
-                        <circle cx="..." cy="..." r="..."/>
-                    </svg>
-                    
-                    Arquivo esperado: logo.svg (salve na mesma pasta)
-                -->
+                <img src="logo.svg" alt="Logo Antonella">
             </div>
 
             <div class="save-text">Save the Date</div>
