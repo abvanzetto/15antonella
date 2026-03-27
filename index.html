@@ -10,19 +10,19 @@
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seusite.com/">
+    <meta property="og:url" content="https://antonelladitadi.online/">
     <meta property="og:title" content="Antonella Ditadi - 15 Anos">
     <meta property="og:description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date! 12 de Setembro, 2026.">
-    <meta property="og:image" content="https://seusite.com/share-image.jpg">
+    <meta property="og:image" content="https://antonelladitadi.online/share-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://seusite.com/">
+    <meta property="twitter:url" content="https://antonelladitadi.online/">
     <meta property="twitter:title" content="Antonella Ditadi - 15 Anos">
     <meta property="twitter:description" content="Um novo ciclo vai começar e eu faço questão da sua presença. Save the date!">
-    <meta property="twitter:image" content="https://seusite.com/share-image.jpg">
+    <meta property="twitter:image" content="https://antonelladitadi.online/share-image.jpg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,9 +41,9 @@
             color: #2a2a2a;
         }
 
-        /* Flores PNG - MOLDURA COMPLETA DENSA (todas as bordas) */
+        /* Flores PNG - MOLDURA COMPLETA AO REDOR DO PERÍMETRO */
         .flower-decoration {
-            position: absolute;
+            position: fixed;
             pointer-events: none;
             z-index: 5;
             opacity: 0;
@@ -56,312 +56,328 @@
             filter: drop-shadow(0 3px 10px rgba(0,0,0,0.12));
         }
 
+        /* === CANTO SUPERIOR ESQUERDO === */
+        .flower-corner-tl {
+            top: -50%;
+            left: -50%;
+            width: 180px;
+            height: 180px;
+            animation: flowerFadeIn 2s ease-out 0.1s forwards, flowerSway1 7s ease-in-out infinite 2s;
+        }
+
         /* === BORDA SUPERIOR === */
         .flower-top-1 {
-            top: -55%;
-            left: -5%;
-            width: 220px;
-            height: 220px;
-            animation: flowerFadeIn 2s ease-out 0.2s forwards, flowerSway1 7s ease-in-out infinite 2s;
+            top: -50%;
+            left: 10%;
+            width: 160px;
+            height: 160px;
+            animation: flowerFadeIn 2s ease-out 0.2s forwards, flowerSway2 8s ease-in-out infinite 2.2s;
+            transform: rotate(15deg);
         }
 
         .flower-top-2 {
             top: -50%;
-            left: 8%;
-            width: 200px;
-            height: 200px;
-            animation: flowerFadeIn 2s ease-out 0.4s forwards, flowerSway2 8s ease-in-out infinite 2.3s;
-            transform: rotate(20deg);
+            left: 25%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 0.3s forwards, flowerSway1 7.5s ease-in-out infinite 2.4s;
+            transform: rotate(-10deg);
         }
 
         .flower-top-3 {
-            top: -52%;
-            left: 18%;
-            width: 210px;
-            height: 210px;
-            animation: flowerFadeIn 2s ease-out 0.6s forwards, flowerSway1 9s ease-in-out infinite 2.6s;
-            transform: rotate(-15deg);
-        }
-
-        .flower-top-4 {
-            top: -48%;
-            left: 30%;
-            width: 195px;
-            height: 195px;
-            animation: flowerFadeIn 2s ease-out 0.8s forwards, flowerSway2 7.5s ease-in-out infinite 2.9s;
-            transform: rotate(10deg);
-        }
-
-        .flower-top-5 {
-            top: -53%;
-            right: 30%;
-            width: 205px;
-            height: 205px;
-            animation: flowerFadeIn 2s ease-out 1s forwards, flowerSway1 8.5s ease-in-out infinite 3.2s;
-            transform: rotate(-20deg);
-        }
-
-        .flower-top-6 {
-            top: -49%;
-            right: 18%;
-            width: 215px;
-            height: 215px;
-            animation: flowerFadeIn 2s ease-out 1.2s forwards, flowerSway2 9.5s ease-in-out infinite 3.5s;
-            transform: rotate(12deg);
-        }
-
-        .flower-top-7 {
-            top: -51%;
-            right: 8%;
-            width: 200px;
-            height: 200px;
-            animation: flowerFadeIn 2s ease-out 1.4s forwards, flowerSway1 8s ease-in-out infinite 3.8s;
-            transform: rotate(-18deg);
-        }
-
-        .flower-top-8 {
-            top: -54%;
-            right: -5%;
-            width: 225px;
-            height: 225px;
-            animation: flowerFadeIn 2s ease-out 1.6s forwards, flowerSway2 7s ease-in-out infinite 4.1s;
-        }
-
-        /* === BORDA INFERIOR === */
-        .flower-bottom-1 {
-            bottom: -55%;
-            left: -5%;
-            width: 225px;
-            height: 225px;
-            animation: flowerFadeIn 2s ease-out 0.3s forwards, flowerSway2 8s ease-in-out infinite 2.2s;
-        }
-
-        .flower-bottom-2 {
-            bottom: -50%;
-            left: 8%;
-            width: 205px;
-            height: 205px;
-            animation: flowerFadeIn 2s ease-out 0.5s forwards, flowerSway1 9s ease-in-out infinite 2.5s;
-            transform: rotate(-22deg);
-        }
-
-        .flower-bottom-3 {
-            bottom: -52%;
-            left: 18%;
-            width: 215px;
-            height: 215px;
-            animation: flowerFadeIn 2s ease-out 0.7s forwards, flowerSway2 7.5s ease-in-out infinite 2.8s;
-            transform: rotate(16deg);
-        }
-
-        .flower-bottom-4 {
-            bottom: -48%;
-            left: 30%;
-            width: 200px;
-            height: 200px;
-            animation: flowerFadeIn 2s ease-out 0.9s forwards, flowerSway1 8.5s ease-in-out infinite 3.1s;
-            transform: rotate(-14deg);
-        }
-
-        .flower-bottom-5 {
-            bottom: -53%;
-            right: 30%;
-            width: 210px;
-            height: 210px;
-            animation: flowerFadeIn 2s ease-out 1.1s forwards, flowerSway2 9.5s ease-in-out infinite 3.4s;
-            transform: rotate(18deg);
-        }
-
-        .flower-bottom-6 {
-            bottom: -49%;
-            right: 18%;
-            width: 220px;
-            height: 220px;
-            animation: flowerFadeIn 2s ease-out 1.3s forwards, flowerSway1 7s ease-in-out infinite 3.7s;
-            transform: rotate(-12deg);
-        }
-
-        .flower-bottom-7 {
-            bottom: -51%;
-            right: 8%;
-            width: 195px;
-            height: 195px;
-            animation: flowerFadeIn 2s ease-out 1.5s forwards, flowerSway2 8s ease-in-out infinite 4s;
+            top: -50%;
+            left: 40%;
+            width: 165px;
+            height: 165px;
+            animation: flowerFadeIn 2s ease-out 0.4s forwards, flowerSway2 8.5s ease-in-out infinite 2.6s;
             transform: rotate(20deg);
         }
 
-        .flower-bottom-8 {
-            bottom: -54%;
-            right: -5%;
-            width: 230px;
-            height: 230px;
-            animation: flowerFadeIn 2s ease-out 1.7s forwards, flowerSway1 9s ease-in-out infinite 4.3s;
+        .flower-top-4 {
+            top: -50%;
+            left: 55%;
+            width: 175px;
+            height: 175px;
+            animation: flowerFadeIn 2s ease-out 0.5s forwards, flowerSway1 7s ease-in-out infinite 2.8s;
+            transform: rotate(-15deg);
         }
 
-        /* === BORDA ESQUERDA === */
-        .flower-left-1 {
-            top: 15%;
-            left: -55%;
-            width: 210px;
-            height: 210px;
-            animation: flowerFadeIn 2s ease-out 0.4s forwards, flowerSway1 8.5s ease-in-out infinite 2.4s;
-            transform: rotate(25deg);
+        .flower-top-5 {
+            top: -50%;
+            left: 70%;
+            width: 160px;
+            height: 160px;
+            animation: flowerFadeIn 2s ease-out 0.6s forwards, flowerSway2 9s ease-in-out infinite 3s;
+            transform: rotate(12deg);
         }
 
-        .flower-left-2 {
-            top: 30%;
-            left: -52%;
-            width: 220px;
-            height: 220px;
-            animation: flowerFadeIn 2s ease-out 0.8s forwards, flowerSway2 7.5s ease-in-out infinite 2.8s;
+        .flower-top-6 {
+            top: -50%;
+            left: 85%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 0.7s forwards, flowerSway1 8s ease-in-out infinite 3.2s;
             transform: rotate(-18deg);
         }
 
-        .flower-left-3 {
-            top: 45%;
-            left: -54%;
-            width: 200px;
-            height: 200px;
-            animation: flowerFadeIn 2s ease-out 1.2s forwards, flowerSway1 9s ease-in-out infinite 3.2s;
-            transform: rotate(15deg);
-        }
-
-        .flower-left-4 {
-            top: 60%;
-            left: -50%;
-            width: 215px;
-            height: 215px;
-            animation: flowerFadeIn 2s ease-out 1.6s forwards, flowerSway2 8s ease-in-out infinite 3.6s;
-            transform: rotate(-20deg);
+        /* === CANTO SUPERIOR DIREITO === */
+        .flower-corner-tr {
+            top: -50%;
+            right: -50%;
+            width: 180px;
+            height: 180px;
+            animation: flowerFadeIn 2s ease-out 0.8s forwards, flowerSway2 7.5s ease-in-out infinite 3.4s;
         }
 
         /* === BORDA DIREITA === */
         .flower-right-1 {
-            top: 15%;
-            right: -55%;
-            width: 205px;
-            height: 205px;
-            animation: flowerFadeIn 2s ease-out 0.5s forwards, flowerSway2 9s ease-in-out infinite 2.5s;
-            transform: rotate(-25deg);
+            top: 10%;
+            right: -50%;
+            width: 165px;
+            height: 165px;
+            animation: flowerFadeIn 2s ease-out 0.9s forwards, flowerSway1 8.5s ease-in-out infinite 3.6s;
+            transform: rotate(25deg);
         }
 
         .flower-right-2 {
-            top: 30%;
-            right: -52%;
-            width: 225px;
-            height: 225px;
-            animation: flowerFadeIn 2s ease-out 0.9s forwards, flowerSway1 7.5s ease-in-out infinite 2.9s;
-            transform: rotate(18deg);
+            top: 25%;
+            right: -50%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 1s forwards, flowerSway2 7s ease-in-out infinite 3.8s;
+            transform: rotate(-12deg);
         }
 
         .flower-right-3 {
-            top: 45%;
-            right: -54%;
-            width: 195px;
-            height: 195px;
-            animation: flowerFadeIn 2s ease-out 1.3s forwards, flowerSway2 8.5s ease-in-out infinite 3.3s;
-            transform: rotate(-15deg);
+            top: 40%;
+            right: -50%;
+            width: 160px;
+            height: 160px;
+            animation: flowerFadeIn 2s ease-out 1.1s forwards, flowerSway1 9s ease-in-out infinite 4s;
+            transform: rotate(18deg);
         }
 
         .flower-right-4 {
-            top: 60%;
+            top: 55%;
             right: -50%;
-            width: 220px;
-            height: 220px;
-            animation: flowerFadeIn 2s ease-out 1.7s forwards, flowerSway1 9.5s ease-in-out infinite 3.7s;
+            width: 175px;
+            height: 175px;
+            animation: flowerFadeIn 2s ease-out 1.2s forwards, flowerSway2 8s ease-in-out infinite 4.2s;
+            transform: rotate(-20deg);
+        }
+
+        .flower-right-5 {
+            top: 70%;
+            right: -50%;
+            width: 165px;
+            height: 165px;
+            animation: flowerFadeIn 2s ease-out 1.3s forwards, flowerSway1 7.5s ease-in-out infinite 4.4s;
+            transform: rotate(15deg);
+        }
+
+        .flower-right-6 {
+            top: 85%;
+            right: -50%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 1.4s forwards, flowerSway2 8.5s ease-in-out infinite 4.6s;
+            transform: rotate(-22deg);
+        }
+
+        /* === CANTO INFERIOR DIREITO === */
+        .flower-corner-br {
+            bottom: -50%;
+            right: -50%;
+            width: 180px;
+            height: 180px;
+            animation: flowerFadeIn 2s ease-out 1.5s forwards, flowerSway1 7s ease-in-out infinite 4.8s;
+        }
+
+        /* === BORDA INFERIOR === */
+        .flower-bottom-1 {
+            bottom: -50%;
+            right: 10%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 1.6s forwards, flowerSway2 9s ease-in-out infinite 5s;
+            transform: rotate(-16deg);
+        }
+
+        .flower-bottom-2 {
+            bottom: -50%;
+            right: 25%;
+            width: 165px;
+            height: 165px;
+            animation: flowerFadeIn 2s ease-out 1.7s forwards, flowerSway1 8s ease-in-out infinite 5.2s;
+            transform: rotate(14deg);
+        }
+
+        .flower-bottom-3 {
+            bottom: -50%;
+            right: 40%;
+            width: 175px;
+            height: 175px;
+            animation: flowerFadeIn 2s ease-out 1.8s forwards, flowerSway2 7.5s ease-in-out infinite 5.4s;
+            transform: rotate(-18deg);
+        }
+
+        .flower-bottom-4 {
+            bottom: -50%;
+            right: 55%;
+            width: 160px;
+            height: 160px;
+            animation: flowerFadeIn 2s ease-out 1.9s forwards, flowerSway1 8.5s ease-in-out infinite 5.6s;
             transform: rotate(22deg);
+        }
+
+        .flower-bottom-5 {
+            bottom: -50%;
+            right: 70%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 2s forwards, flowerSway2 7s ease-in-out infinite 5.8s;
+            transform: rotate(-14deg);
+        }
+
+        .flower-bottom-6 {
+            bottom: -50%;
+            right: 85%;
+            width: 165px;
+            height: 165px;
+            animation: flowerFadeIn 2s ease-out 2.1s forwards, flowerSway1 9s ease-in-out infinite 6s;
+            transform: rotate(16deg);
+        }
+
+        /* === CANTO INFERIOR ESQUERDO === */
+        .flower-corner-bl {
+            bottom: -50%;
+            left: -50%;
+            width: 180px;
+            height: 180px;
+            animation: flowerFadeIn 2s ease-out 2.2s forwards, flowerSway2 8s ease-in-out infinite 6.2s;
+        }
+
+        /* === BORDA ESQUERDA === */
+        .flower-left-1 {
+            bottom: 10%;
+            left: -50%;
+            width: 165px;
+            height: 165px;
+            animation: flowerFadeIn 2s ease-out 2.3s forwards, flowerSway1 7.5s ease-in-out infinite 6.4s;
+            transform: rotate(-20deg);
+        }
+
+        .flower-left-2 {
+            bottom: 25%;
+            left: -50%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 2.4s forwards, flowerSway2 8.5s ease-in-out infinite 6.6s;
+            transform: rotate(18deg);
+        }
+
+        .flower-left-3 {
+            bottom: 40%;
+            left: -50%;
+            width: 175px;
+            height: 175px;
+            animation: flowerFadeIn 2s ease-out 2.5s forwards, flowerSway1 7s ease-in-out infinite 6.8s;
+            transform: rotate(-15deg);
+        }
+
+        .flower-left-4 {
+            bottom: 55%;
+            left: -50%;
+            width: 160px;
+            height: 160px;
+            animation: flowerFadeIn 2s ease-out 2.6s forwards, flowerSway2 9s ease-in-out infinite 7s;
+            transform: rotate(20deg);
+        }
+
+        .flower-left-5 {
+            bottom: 70%;
+            left: -50%;
+            width: 170px;
+            height: 170px;
+            animation: flowerFadeIn 2s ease-out 2.7s forwards, flowerSway1 8s ease-in-out infinite 7.2s;
+            transform: rotate(-12deg);
+        }
+
+        .flower-left-6 {
+            bottom: 85%;
+            left: -50%;
+            width: 165px;
+            height: 165px;
+            animation: flowerFadeIn 2s ease-out 2.8s forwards, flowerSway2 7.5s ease-in-out infinite 7.4s;
+            transform: rotate(24deg);
         }
 
         /* Animações */
         @keyframes flowerFadeIn {
             0% {
                 opacity: 0;
-                transform: scale(0.85) translateY(30px);
+                transform: scale(0.9);
             }
             100% {
-                opacity: 0.6;
-                transform: scale(1) translateY(0);
+                opacity: 0.7;
+                transform: scale(1);
             }
         }
 
-        /* Movimento de balanço suave 1 */
         @keyframes flowerSway1 {
             0%, 100% {
                 transform: translateY(0) rotate(0deg) scale(1);
             }
             25% {
-                transform: translateY(-22px) rotate(6deg) scale(1.06);
+                transform: translateY(-18px) rotate(5deg) scale(1.05);
             }
             50% {
-                transform: translateY(-12px) rotate(-4deg) scale(1.03);
+                transform: translateY(-10px) rotate(-3deg) scale(1.02);
             }
             75% {
-                transform: translateY(-18px) rotate(5deg) scale(1.04);
+                transform: translateY(-15px) rotate(4deg) scale(1.03);
             }
         }
 
-        /* Movimento de balanço suave 2 */
         @keyframes flowerSway2 {
             0%, 100% {
                 transform: translateY(0) rotate(0deg) scale(1);
             }
             33% {
-                transform: translateY(-20px) rotate(-5deg) scale(1.05);
+                transform: translateY(-16px) rotate(-4deg) scale(1.04);
             }
             66% {
-                transform: translateY(-15px) rotate(7deg) scale(1.03);
+                transform: translateY(-12px) rotate(6deg) scale(1.02);
             }
         }
 
-        /* Responsivo - apenas cantos em mobile */
+        /* Responsivo */
         @media (max-width: 768px) {
             .flower-top-2,
-            .flower-top-3,
             .flower-top-4,
-            .flower-top-5,
             .flower-top-6,
-            .flower-top-7,
-            .flower-bottom-2,
-            .flower-bottom-3,
-            .flower-bottom-4,
-            .flower-bottom-5,
-            .flower-bottom-6,
-            .flower-bottom-7,
-            .flower-left-1,
-            .flower-left-2,
-            .flower-left-3,
-            .flower-left-4,
-            .flower-right-1,
             .flower-right-2,
-            .flower-right-3,
-            .flower-right-4 {
+            .flower-right-4,
+            .flower-right-6,
+            .flower-bottom-2,
+            .flower-bottom-4,
+            .flower-bottom-6,
+            .flower-left-2,
+            .flower-left-4,
+            .flower-left-6 {
                 display: none;
             }
 
-            .flower-top-1,
-            .flower-top-8 {
-                width: 140px !important;
-                height: 140px !important;
-            }
-
-            .flower-bottom-1,
-            .flower-bottom-8 {
-                width: 150px !important;
-                height: 150px !important;
+            .flower-decoration {
+                width: 120px !important;
+                height: 120px !important;
             }
         }
 
         @media (max-width: 480px) {
-            .flower-top-1,
-            .flower-top-8 {
-                width: 110px !important;
-                height: 110px !important;
-            }
-
-            .flower-bottom-1,
-            .flower-bottom-8 {
-                width: 120px !important;
-                height: 120px !important;
+            .flower-decoration {
+                width: 100px !important;
+                height: 100px !important;
             }
         }
 
@@ -501,13 +517,22 @@
             padding: 60px 0;
         }
 
-        /* Monograma AD */
-        .monogram {
+        /* Logo Container */
+        .logo-container {
             width: 120px;
             height: 120px;
             margin: 0 auto 40px;
             opacity: 0;
             animation: fadeInScale 1.2s ease-out 0.3s forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         @keyframes fadeInScale {
@@ -908,7 +933,7 @@
                 font-size: 1.8rem;
             }
 
-            .monogram {
+            .logo-container {
                 width: 90px;
                 height: 90px;
             }
@@ -918,14 +943,15 @@
 <body>
     <!-- 
     ═══════════════════════════════════════════════════════════════
-    FLORES PNG - MOLDURA COMPLETA E DENSA
+    FLORES PNG - MOLDURA COMPLETA AO REDOR DO PERÍMETRO
     ═══════════════════════════════════════════════════════════════
     
-    24 flores no total cobrindo TODAS as bordas:
-    - 8 flores no TOPO
-    - 8 flores no RODAPÉ  
-    - 4 flores na ESQUERDA
-    - 4 flores na DIREITA
+    28 flores distribuídas uniformemente ao redor de TODA a página:
+    - 4 cantos
+    - 6 no topo
+    - 6 embaixo
+    - 6 na esquerda  
+    - 6 na direita
     
     Você precisa de apenas 4 arquivos PNG na raiz:
     - flor1.png
@@ -933,64 +959,90 @@
     - flor3.png
     - flor4.png
     
-    Elas serão repetidas criando moldura densa em volta da página
-    
     ═══════════════════════════════════════════════════════════════
     -->
     
-    <!-- BORDA SUPERIOR - 8 flores -->
-    <div class="flower-decoration flower-top-1">
+    <!-- CANTO SUPERIOR ESQUERDO -->
+    <div class="flower-decoration flower-corner-tl">
         <img src="flor1.png" alt="">
+    </div>
+
+    <!-- BORDA SUPERIOR -->
+    <div class="flower-decoration flower-top-1">
+        <img src="flor2.png" alt="">
     </div>
     <div class="flower-decoration flower-top-2">
-        <img src="flor2.png" alt="">
+        <img src="flor3.png" alt="">
     </div>
     <div class="flower-decoration flower-top-3">
-        <img src="flor3.png" alt="">
+        <img src="flor4.png" alt="">
     </div>
     <div class="flower-decoration flower-top-4">
-        <img src="flor4.png" alt="">
+        <img src="flor1.png" alt="">
     </div>
     <div class="flower-decoration flower-top-5">
-        <img src="flor1.png" alt="">
+        <img src="flor2.png" alt="">
     </div>
     <div class="flower-decoration flower-top-6">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-top-7">
         <img src="flor3.png" alt="">
     </div>
-    <div class="flower-decoration flower-top-8">
+
+    <!-- CANTO SUPERIOR DIREITO -->
+    <div class="flower-decoration flower-corner-tr">
         <img src="flor4.png" alt="">
     </div>
 
-    <!-- BORDA INFERIOR - 8 flores -->
-    <div class="flower-decoration flower-bottom-1">
+    <!-- BORDA DIREITA -->
+    <div class="flower-decoration flower-right-1">
+        <img src="flor1.png" alt="">
+    </div>
+    <div class="flower-decoration flower-right-2">
         <img src="flor2.png" alt="">
+    </div>
+    <div class="flower-decoration flower-right-3">
+        <img src="flor3.png" alt="">
+    </div>
+    <div class="flower-decoration flower-right-4">
+        <img src="flor4.png" alt="">
+    </div>
+    <div class="flower-decoration flower-right-5">
+        <img src="flor1.png" alt="">
+    </div>
+    <div class="flower-decoration flower-right-6">
+        <img src="flor2.png" alt="">
+    </div>
+
+    <!-- CANTO INFERIOR DIREITO -->
+    <div class="flower-decoration flower-corner-br">
+        <img src="flor3.png" alt="">
+    </div>
+
+    <!-- BORDA INFERIOR -->
+    <div class="flower-decoration flower-bottom-1">
+        <img src="flor4.png" alt="">
     </div>
     <div class="flower-decoration flower-bottom-2">
-        <img src="flor3.png" alt="">
-    </div>
-    <div class="flower-decoration flower-bottom-3">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-bottom-4">
         <img src="flor1.png" alt="">
     </div>
-    <div class="flower-decoration flower-bottom-5">
+    <div class="flower-decoration flower-bottom-3">
         <img src="flor2.png" alt="">
     </div>
-    <div class="flower-decoration flower-bottom-6">
+    <div class="flower-decoration flower-bottom-4">
         <img src="flor3.png" alt="">
     </div>
-    <div class="flower-decoration flower-bottom-7">
+    <div class="flower-decoration flower-bottom-5">
         <img src="flor4.png" alt="">
     </div>
-    <div class="flower-decoration flower-bottom-8">
+    <div class="flower-decoration flower-bottom-6">
         <img src="flor1.png" alt="">
     </div>
 
-    <!-- BORDA ESQUERDA - 4 flores -->
+    <!-- CANTO INFERIOR ESQUERDO -->
+    <div class="flower-decoration flower-corner-bl">
+        <img src="flor2.png" alt="">
+    </div>
+
+    <!-- BORDA ESQUERDA -->
     <div class="flower-decoration flower-left-1">
         <img src="flor3.png" alt="">
     </div>
@@ -1003,19 +1055,11 @@
     <div class="flower-decoration flower-left-4">
         <img src="flor2.png" alt="">
     </div>
-
-    <!-- BORDA DIREITA - 4 flores -->
-    <div class="flower-decoration flower-right-1">
-        <img src="flor4.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-2">
-        <img src="flor1.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-3">
-        <img src="flor2.png" alt="">
-    </div>
-    <div class="flower-decoration flower-right-4">
+    <div class="flower-decoration flower-left-5">
         <img src="flor3.png" alt="">
+    </div>
+    <div class="flower-decoration flower-left-6">
+        <img src="flor4.png" alt="">
     </div>
 
     <!-- Elementos abstratos decorativos -->
