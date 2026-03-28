@@ -60,7 +60,10 @@
             box-shadow: 
                 0 2px 10px rgba(0,0,0,0.08),
                 0 8px 30px rgba(0,0,0,0.12),
-                inset 0 0 0 1px rgba(180, 150, 130, 0.1);
+                inset 0 0 0 1px rgba(180, 150, 130, 0.1),
+                /* Glow dourado nas bordas */
+                inset 0 0 60px rgba(180, 150, 130, 0.15),
+                inset 0 0 100px rgba(180, 150, 130, 0.08);
             min-height: calc(100vh - 80px);
         }
 
@@ -78,112 +81,29 @@
             z-index: 1;
         }
 
-        /* Cantos Dobrados - Superior Esquerdo */
-        .paper-fold-tl {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 60px 60px 0;
-            border-color: transparent #d4cfc5 transparent transparent;
-            z-index: 10;
-            filter: drop-shadow(-2px -2px 4px rgba(0,0,0,0.15));
-            transition: transform 0.3s ease;
-        }
-
-        .paper-fold-tl::after {
+        /* Gradiente Desfocado nas Bordas (Vinheta Invertida) */
+        .paper-container::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 60px 60px 0;
-            border-color: transparent rgba(180, 150, 130, 0.15) transparent transparent;
-        }
-
-        /* Cantos Dobrados - Superior Direito */
-        .paper-fold-tr {
-            position: absolute;
-            top: 0;
             right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 60px 60px 0 0;
-            border-color: #d4cfc5 transparent transparent transparent;
-            z-index: 10;
-            filter: drop-shadow(2px -2px 4px rgba(0,0,0,0.15));
-            transition: transform 0.3s ease;
-        }
-
-        .paper-fold-tr::after {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 60px 60px 0 0;
-            border-color: rgba(180, 150, 130, 0.15) transparent transparent transparent;
-        }
-
-        /* Cantos Dobrados - Inferior Esquerdo */
-        .paper-fold-bl {
-            position: absolute;
             bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 0 60px 60px;
-            border-color: transparent transparent #d4cfc5 transparent;
-            z-index: 10;
-            filter: drop-shadow(-2px 2px 4px rgba(0,0,0,0.15));
-            transition: transform 0.3s ease;
-        }
-
-        .paper-fold-bl::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 0 60px 60px;
-            border-color: transparent transparent rgba(180, 150, 130, 0.15) transparent;
-        }
-
-        /* Cantos Dobrados - Inferior Direito */
-        .paper-fold-br {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 60px 0 0 60px;
-            border-color: transparent transparent transparent #d4cfc5;
-            z-index: 10;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.15));
-            transition: transform 0.3s ease;
-        }
-
-        .paper-fold-br::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 60px 0 0 60px;
-            border-color: transparent transparent transparent rgba(180, 150, 130, 0.15);
+            background: 
+                linear-gradient(to right, 
+                    rgba(232, 227, 220, 0.3) 0%,
+                    transparent 15%,
+                    transparent 85%,
+                    rgba(232, 227, 220, 0.3) 100%
+                ),
+                linear-gradient(to bottom,
+                    rgba(232, 227, 220, 0.3) 0%,
+                    transparent 15%,
+                    transparent 85%,
+                    rgba(232, 227, 220, 0.3) 100%
+                );
+            pointer-events: none;
+            z-index: 2;
         }
 
         /* Grain Overlay - Textura Premium */
@@ -917,53 +837,6 @@
                 min-height: calc(100vh - 40px);
             }
 
-            .paper-fold-tl,
-            .paper-fold-tr,
-            .paper-fold-bl,
-            .paper-fold-br {
-                border-width: 40px;
-            }
-
-            .paper-fold-tl {
-                border-width: 0 40px 40px 0;
-            }
-
-            .paper-fold-tr {
-                border-width: 40px 40px 0 0;
-            }
-
-            .paper-fold-bl {
-                border-width: 0 0 40px 40px;
-            }
-
-            .paper-fold-br {
-                border-width: 40px 0 0 40px;
-            }
-
-            .paper-fold-tl::after,
-            .paper-fold-tr::after,
-            .paper-fold-bl::after,
-            .paper-fold-br::after {
-                border-width: 40px;
-            }
-
-            .paper-fold-tl::after {
-                border-width: 0 40px 40px 0;
-            }
-
-            .paper-fold-tr::after {
-                border-width: 40px 40px 0 0;
-                top: -40px;
-            }
-
-            .paper-fold-bl::after {
-                border-width: 0 0 40px 40px;
-            }
-
-            .paper-fold-br::after {
-                border-width: 40px 0 0 40px;
-            }
-
             .floral-ornament {
                 display: none;
             }
@@ -1057,11 +930,6 @@
 <body>
     <!-- Container de Papel Premium -->
     <div class="paper-container">
-        <!-- Cantos Dobrados -->
-        <div class="paper-fold-tl"></div>
-        <div class="paper-fold-tr"></div>
-        <div class="paper-fold-bl"></div>
-        <div class="paper-fold-br"></div>
 
     <!-- 
     ═══════════════════════════════════════════════════════════════
@@ -1387,12 +1255,6 @@
         // Definir velocidades diferentes para cada linha (profundidade)
         const parallaxSpeeds = [0.15, 0.25, 0.1, 0.2, 0.3, 0.18];
         
-        // Elementos dos cantos dobrados
-        const foldTL = document.querySelector('.paper-fold-tl');
-        const foldTR = document.querySelector('.paper-fold-tr');
-        const foldBL = document.querySelector('.paper-fold-bl');
-        const foldBR = document.querySelector('.paper-fold-br');
-        
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             
@@ -1402,15 +1264,6 @@
                 const yPos = -(scrolled * speed);
                 line.style.transform = `translateY(${yPos}px)`;
             });
-            
-            // Parallax sutil nos cantos (efeito de "levantamento")
-            const scrollPercent = scrolled / (document.documentElement.scrollHeight - window.innerHeight);
-            const liftAmount = scrollPercent * 5; // Máximo 5px de movimento
-            
-            if (foldTL) foldTL.style.transform = `translate(${-liftAmount}px, ${-liftAmount}px)`;
-            if (foldTR) foldTR.style.transform = `translate(${liftAmount}px, ${-liftAmount}px)`;
-            if (foldBL) foldBL.style.transform = `translate(${-liftAmount}px, ${liftAmount}px)`;
-            if (foldBR) foldBR.style.transform = `translate(${liftAmount}px, ${liftAmount}px)`;
         });
 
         // Efeito de partículas ao tocar/arrastar
