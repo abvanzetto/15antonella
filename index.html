@@ -116,6 +116,27 @@
             }
         }
 
+        /* Partículas Interativas - aparecem ao tocar/arrastar */
+        .touch-particle {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            background: radial-gradient(circle, rgba(180, 150, 130, 0.8), rgba(180, 150, 130, 0));
+            animation: touchFloat 1.5s ease-out forwards;
+        }
+
+        @keyframes touchFloat {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(-100px) scale(2);
+                opacity: 0;
+            }
+        }
+
         /* Variações de delay e duração para naturalidade */
 
         /* Elementos abstratos decorativos */
@@ -945,6 +966,75 @@
         
         // Criar partículas ao carregar
         createParticles();
+
+        // Efeito de partículas ao tocar/arrastar
+        let lastTime = 0;
+        const throttleDelay = 30; // Criar partícula a cada 30ms
+
+        function createTouchParticle(x, y) {
+            const now = Date.now();
+            if (now - lastTime < throttleDelay) return;
+            lastTime = now;
+
+            const particle = document.createElement('div');
+            particle.className = 'touch-particle';
+            
+            // Tamanho aleatório
+            const size = 10 + Math.random() * 20;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Posição no toque
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+            
+            document.body.appendChild(particle);
+            
+            // Remover após animação
+            setTimeout(() => {
+                particle.remove();
+            }, 1500);
+        }
+
+        // Touch events (mobile)
+        document.addEventListener('touchmove', (e) => {
+            const touch = e.touches[0];
+            createTouchParticle(touch.clientX, touch.clientY);
+        });
+
+        document.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            createTouchParticle(touch.clientX, touch.clientY);
+        });
+
+        // Mouse events (desktop)
+        let isMouseDown = false;
+        
+        document.addEventListener('mousedown', () => {
+            isMouseDown = true;
+        });
+        
+        document.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (isMouseDown) {
+                createTouchParticle(e.clientX, e.clientY);
+            }
+        });
+
+        // Criar partícula ao clicar também
+        document.addEventListener('click', (e) => {
+            // Criar várias partículas no clique
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const offsetX = (Math.random() - 0.5) * 20;
+                    const offsetY = (Math.random() - 0.5) * 20;
+                    createTouchParticle(e.clientX + offsetX, e.clientY + offsetY);
+                }, i * 50);
+            }
+        });
     </script>
 </body>
 </html>
