@@ -51,6 +51,19 @@
             padding: 0;
         }
 
+        /* Moldura ao redor da página */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(180, 150, 130, 0.3);
+            pointer-events: none;
+            z-index: 10;
+        }
+
         /* Partículas Flutuantes Modernas */
         .particles-container {
             position: fixed;
@@ -622,6 +635,13 @@
 
         /* Responsivo */
         @media (max-width: 768px) {
+            body::before {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+            }
+
             .container {
                 padding: 0 20px;
             }
@@ -674,6 +694,13 @@
         }
 
         @media (max-width: 480px) {
+            body::before {
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
             .save-text {
                 font-size: 1.5rem;
                 letter-spacing: 3px;
